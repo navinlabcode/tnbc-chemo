@@ -5,12 +5,12 @@
 - UMAPs
 - Barplots
 - Dotplots
-- Regulon analysis (@tapsi)
+- Regulon analysis (@TapsiS)
   
 ## Fig 2 and Fig S2
 - UMAPs
 - NMF for archetypes
-- ST analysis (@yiyun)
+- ST analysis (@yiyunlin1992)
 - Gene enrichment
 - Pearson residuals
 - Survival analysis
