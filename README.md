@@ -1,55 +1,18 @@
-# tnbc_chemo
+# Triple-negative breast cancer and chemotherapy response
 
-# Reproducing figures
-## Fig 1 and Fig S1
-- UMAPs
-- Barplots
-- Dotplots
-- Regulon analysis (@tapsi)
-  
-## Fig 2 and Fig S2
-- UMAPs
-- NMF for archetypes
-- ST analysis (@yiyun)
-- Gene enrichment
-- Pearson residuals
-- Survival analysis
-- Pseudo-bulk DE
+This repository includes the codes and analysis instructions for the manuscript: 'Decoding the Archetypes and Ecotypes of Triple-Negative Breast Cancer in Response to Chemotherapy'.
 
-## Fig 3 and Fig S3
-- NMF for metaprograms
-- Metamodule diff
-- Proportional diff
-- Pseudo-bulk DE
-- Seurat's cell cycling phase
-  
-## Fig 4 and Fig S4-S5 
-- UMAP
-- Proportional diff
-  
-## Fig 5 and Fig S6-S7
-- UMAP
-- Proportional diff
-  
-## Fig 6 and Fig S8-S9
-- Determining Ecotypes
-- Comparing ecotypes across ARCs and pCR/RD
-- Jaccard similarities
-   
-## Fig 7
-- Cell-based model
-- Gene-based model
-  
+# Contents 
 
-# Gene signatures
+| Folder             | Purpose                                              | Link                                                          | Visibility |
+| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------- | ---------- |
+| install            | Instructions to install the required software        | https://github.com/navinlabcode/tnbc-chemo/tree/main/install  | public     |
+| analysis           | Computational analysis                               | https://github.com/navinlabcode/tnbc-chemo/tree/main/analysis | public     |
+| data               | Processed Seurat objects to facilitate data analysis | https://github.com/navinlabcode/tnbc-chemo/tree/main/data     | private    |
+| supplementary data | Supplementary tables in our manuscript               | https://github.com/navinlabcode/tnbc-chemo/tree/main/supp     | private    |
+| other data         | Public data we used in this study                    | https://github.com/navinlabcode/tnbc-chemo/tree/main/other    | public     |
 
-Vanderbilt TNBC signatures: https://github.com/Puriney/lib_vanderbilt_tnbctype
 
-# External cohort
+# Browsing single-cell data
 
-## METABRIC
-patient ID used in this study: xxx.txt
-
-## SCANB
-patient ID used in this study: xxx.txt
-
+https://cellxgene.cziscience.com/datasets/xxx
