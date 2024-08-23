@@ -3,9 +3,10 @@
 
 ## Identifying aneuploid cells
 
-| Analysis                             | Main method                                                                                                                                       | Related figures  |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| Identifying aneuploid cells [(link)]() | [CopyKAT (Gao, R. et al. 2021)](https://doi.org/10.1038/s41587-020-00795-2) and [Tirosh, I. et al. 2016](https://doi.org/10.1126/science.aad0501) | Fig. 1, Fig. S1. |
+| Analysis                                                                                                                           | Main method                                                                                                                                       | Related figures  |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| Identifying aneuploid cells [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/identifying_aneuploid_cells.md) | [CopyKAT (Gao, R. et al. 2021)](https://doi.org/10.1038/s41587-020-00795-2) and [Tirosh, I. et al. 2016](https://doi.org/10.1126/science.aad0501) | Fig. 1, Fig. S1. |
+
 
 ## Cancer-intrinsic archetypes
 
