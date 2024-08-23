@@ -2,15 +2,16 @@
 
 This repository includes the codes and analysis instructions for the manuscript: 'Decoding the Archetypes and Ecotypes of Triple-Negative Breast Cancer in Response to Chemotherapy'.
 
-# Contents 
+# Contents
 
-| Folder             | Purpose                                              | Link                                                          | Visibility |
-| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------- | ---------- |
-| install            | Instructions to install the required software        | https://github.com/navinlabcode/tnbc-chemo/tree/main/install  | public     |
-| analysis           | Computational analysis                               | https://github.com/navinlabcode/tnbc-chemo/tree/main/analysis | public     |
-| data               | Processed Seurat objects to facilitate data analysis | https://github.com/navinlabcode/tnbc-chemo/tree/main/data     | private    |
-| supplementary data | Supplementary tables in our manuscript               | https://github.com/navinlabcode/tnbc-chemo/tree/main/supp     | private    |
-| other data         | Public data we used in this study                    | https://github.com/navinlabcode/tnbc-chemo/tree/main/other    | public     |
+| Folder                                                                          | Purpose                                              | Visibility |
+| ------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------- |
+| [install](https://github.com/navinlabcode/tnbc-chemo/tree/main/install)         | Instructions to install the required software        | public     |
+| [analysis](https://github.com/navinlabcode/tnbc-chemo/tree/main/analysis)       | Computational analysis                               | public     |
+| [data](https://github.com/navinlabcode/tnbc-chemo/tree/main/data)               | Processed Seurat objects to facilitate data analysis | private    |
+| [supplementary data](https://github.com/navinlabcode/tnbc-chemo/tree/main/supp) | Supplementary tables in our manuscript               | private    |
+| [other data](https://github.com/navinlabcode/tnbc-chemo/tree/main/other)        | Public data we used in this study                    | public     |
+
 
 
 # Browsing single-cell data
