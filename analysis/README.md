@@ -1,5 +1,7 @@
 # Analysis
 
+Analysis are accompanied with detailed instructions. 
+
 
 ## Identifying aneuploid cells
 
@@ -9,8 +11,6 @@
 
 
 ## Cancer-intrinsic archetypes
-
-See detailed instruction: 
 
 | Analysis                                                           | Main method                                                                       | Related figures |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------------- | --------------- |

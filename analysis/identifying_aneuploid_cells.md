@@ -7,7 +7,7 @@
 
 **Synopsis**
 
-``` terminal
+``` console
 Rscript analysis/scripts/copykat_mix.R PATH_TO_SEURAT_OBJECT OUTPUT_DIR SAMPLE_NAME
 ```
 
