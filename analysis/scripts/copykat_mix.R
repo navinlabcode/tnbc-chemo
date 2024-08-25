@@ -38,7 +38,7 @@ suppressPackageStartupMessages({
   library(tidyverse); library(reshape2); library(dplyr); library(purrr)
   library(ggplot2); library(ggpubr); library(RColorBrewer)
   theme_set(theme_pubr(base_size=18, legend = 'right'))
-  library(ruok); library(glue); library(cli); library(tictoc)
+  library(glue); library(cli); library(tictoc)
   library(GenomicRanges); library(GenomeInfoDb)
   library(matrixStats)
   library(ComplexHeatmap)
