@@ -27,7 +27,9 @@ In addition to the CopyKAT results, it also results in several data visualizatio
 | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/identifying_aneuploid_cells/copykat_aneuploidy_prediction_tirosh.png?raw=true"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/identifying_aneuploid_cells/copykat_DNA_DR.category.png?raw=true" > | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/identifying_aneuploid_cells/copykat_heatmap4.png?raw=true" > |
 | <kbd>Ref</kbd>=the mixed normal cells; <kbd>Obs-diploid</kbd>=a query cell inferred as diploid; <kbd>Obs-tumor</kbd>=a query cell inferred as aneuploid                | <kbd>ref</kbd>=the mixed normal cells; <kbd>obs</kbd>=query cells                                                                                          | Heatmap showing the result of 4 strategies (see details below)                                                                                      |
 
-**Rationale**
+---
+
+## Rationale
 
 Inferring copy number alternations (CNAs) from scRNA-seq data is straightforward by using CopyKAT or InferCNV. We used CopyKAT in our study. However, it is not straightforward to chose a proper threshold to robustly separate aneuploid cells and non-aneuploid cells. For example, over-expressions of neighboring genes (e.g., HLA* genes at chr6) would lead to spurious focal CNA events. The gene expression baseline of the reference cells would also affect CNAs inference. To address this problem, we mixed normal cells (including normal epithelial, immune, and stromal cells) with each tumor sample to run CopyKAT. Then we refer to the following 4 strategies to collectively determine the aneuploid cells
 
