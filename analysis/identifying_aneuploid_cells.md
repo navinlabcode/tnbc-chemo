@@ -37,4 +37,4 @@ Inferring copy number alternations (CNAs) from scRNA-seq data is straightforward
 4. Livnat-based method ([Livnat Jerby-Arnon et al 2018](https://doi.org/10.1016/j.cell.2018.09.006)). By leveraging the public TCGA data, it calculates whether a query cell is similar to the breast cancer cell or the normal cell. But this method relies on the proper public data, so we kept it just for comprehensiveness and did not use it in the manuscript. 
 
 
-
+$${\color{grey}\text{Written by Yun Yan}}$$
