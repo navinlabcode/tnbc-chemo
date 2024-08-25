@@ -25,7 +25,7 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                                    | Main method                                            | Related figures |
 | ----------------------------------------------------------- | ------------------------------------------------------ | --------------- |
-| Identifying metaprograms [(link)]()                         | non-negative matrix factorization at single-cell level | Fig. 3          |
+| Identifying metaprograms [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/cancer_cell_metaprogram.md#identifying-metaprograms-of-cancer-cells)                         | non-negative matrix factorization at single-cell level | Fig. 3          |
 | Determining cellular frequencies of metaprograms [(link)]() | Module score                                           | Fig. 3          |
 | Inferring cell phases of cancer cells [(link)]()            | Module score                                           | Fig. 3          |
 

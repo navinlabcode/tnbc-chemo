@@ -9,6 +9,9 @@ This instruction will address the following two questions:
 
 ## Identifying metaprograms of cancer cells
 
+In brief, we performed non-negative matrix factorization (NMF) to cancer cells for each sample. It identified NMF factors representing the heterogeneously expressed gene program in each sample. Then the similar gene programs recurrent in multiple samples were merged to result in metaprograms. 
+
+
 ### Step 1. Identifying heterogeneously expressed program in each sample
 
 **Script files**: 
@@ -43,7 +46,7 @@ The output include NMF results per rank per sample, in addition to several data 
 
 | Folder structure listing the results                                                                                                              | Marker genes of a NMF factor example                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/nmf_folders.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/program_example.png?raw=true" width="300"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/nmf_folders.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/program_example.png?raw=true" width="500"> |
 
 
 ### Step 2. Determining metaprograms
@@ -109,7 +112,7 @@ Rscript
 
 *Why not use the top 50 genes to define marker genes for each NMF factor?*
 
-Based on the $$W$$ matrix after running NMF , choosing an arbitrary number of top genes (e.g., top 50) for each factor could be an approach to determine marker genes of each factor (i.e., program). But we did not use it because, for example, the top 37th gene in a factor $a$ could be the top 4th gene in another factor $b$, making the 37th gene failing the definition of marker gene for the factor $a$. Besides, it not easy to justify why top 50? How about top 30 or top 100 ? Therefore, we used the strategy as previously described ([Moncada, R. et al. 2020](https://doi.org/10.1038/s41587-019-0392-8)), which make sure the marker genes of each NMF factor (i.e., program) have the highest contribution to the corresponding factor. 
+Based on the $$W$$ matrix after running NMF , choosing an arbitrary number of top genes (e.g., top 50) for each factor could be an approach to determine marker genes of each factor (i.e., program). But we did not use it because, for example, the top 37th gene in a factor $a$ could be the top 4th gene in another factor $b$, making the 37th gene failing the definition of marker gene for the factor $a$. Besides, it not easy to justify why top 50. What about top 30 or top 100 ? Therefore, we used the strategy as previously described ([Moncada, R. et al. 2020](https://doi.org/10.1038/s41587-019-0392-8)), which make sure the marker genes of each NMF factor (i.e., program) have the highest contribution to the corresponding factor. 
 
 
 *Why not computationally integrate all cells?*
