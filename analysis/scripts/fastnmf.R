@@ -1,6 +1,8 @@
 #!/usr/bin/Rscript
 #--------------------------
 # Perform fastNMF with a fixed rank
+# 
+# Yun Yan (yun.yan@uth.tmc.edu)
 #--------------------------
 suppressPackageStartupMessages({
     library(RcppML)
