@@ -1,6 +1,6 @@
 # Analysis
 
-Analysis are accompanied with detailed instructions. 
+Analysis are accompanied with detailed instructions. See below. 
 
 
 ## Identifying aneuploid cells
