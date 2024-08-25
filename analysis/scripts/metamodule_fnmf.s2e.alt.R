@@ -28,6 +28,7 @@ if (T) {
     nmf_mem_list <- Sys.glob( file.path(dir_proj, z, 'hclust', 'metamodule_membership*ward.D2.csv') )    
 }
 
+### ... more rounds Re-run metamodule_fnmf.s2c.R and metamodule_fnmf.s2e.alt.R ... 
 
 #------ clustree the different NMF models ------
 # nmf_mem <- read_csv(nmf_mem_list[1])
@@ -124,6 +125,7 @@ if (T) {
     df_nmf_mem$manual[idx] <- 'M01'
 }
 
+### ... more rounds of Re-run metamodule_fnmf.s2c.R and metamodule_fnmf.s2e.alt.R ... 
 
 #------ Continue ------
 
