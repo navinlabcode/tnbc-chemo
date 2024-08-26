@@ -34,7 +34,9 @@ Rscript analysis/scripts/default_seurat_pipe.R PATH_TO_SEURAT_OBJECT OUTPUT_DIR 
 
 **Output**
 
-Frequencies of cell cycling phases|Module score of S-phase genes|Module score of G2/M genes
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cell_cycle/barplot.cell_cycle_proportion.PCR.pdf.png?raw=true" width="500">|<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cell_cycle/barplot.S.Score.PCR.pdf.png?raw=true" width="250">|<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cell_cycle/barplot.G2M.Score.PCR.pdf.png?raw=true" width="250">
+| Frequencies of cell cycling phases                                                                                                                                 | Module score of S-phase genes                                                                                                                        | Module score of G2/M genes                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cell_cycle/barplot.cell_cycle_proportion.PCR.pdf.png?raw=true" width="500"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cell_cycle/barplot.S.Score.PCR.pdf.png?raw=true" width="250"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cell_cycle/barplot.G2M.Score.PCR.pdf.png?raw=true" width="250"> |
+
 
 $${\color{grey}\text{Written by Yun Yan}}$$
