@@ -81,6 +81,11 @@ In this case of 30 tentative metaprograms, over-clustering is obvious. If the NM
 | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/heatmap.NMFs_jaccard_to_modules.M30.by_hclust_ward.D2.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/lolipop.intra_MM_similarity.pdf.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/heatmap.meta_module_center_similarity_binarized.jaccard.pdf.png?raw=true" width="300"> |
 | Intentionally start with an over-clustered result                                                                                                                                                   | Low intra-MP suggests noise-like MPs                                                                                                                                      | `No`: suggest to keep. `Yes`: suggest to merge                                                                                                                                                    |
 
+After determining the metaprograms, the <kbd>metamodule_fnmf.s2c.R</kbd> and <kbd>metamodule_fnmf.s2e.alt.R</kbd> also generates the final data visualization of metaprograms. 
+
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/heatmap.NMFs_jaccard_to_modules.M13.by_hclust_manual.pdf.png?raw=true" width="500"> 
+
+
 ### Step 3. Determining marker genes of metaprograms
 
 In brief, for each metaprogram, we compute the average of the gene loading matrix of the included NMF factors. In this way, we create a gene loading matrix in a shape of gene by metaprograms, which applies the same strategy as we determine marker genes for each NMF factor in previous step. 
@@ -166,7 +171,7 @@ Consensus NMF (cNMF) ([Kotliar, et al. 2019](https://doi.org/10.7554/eLife.43803
 >[!NOTE]
 > ***Caveat of metaprogram analysis***
 >
->Metaprogram analysis is good at resolving intra-tumoral heterogeneity. The **caveat** of metaprogram analysis is that it is less likely to identify any gene set uniformly expressed by all cells in a sample. For example, an AR-related gene set is uniformly expressed in a high level in all cancer cells in some patients (i.e., the luminal hormone responsive archetype). But the metaprogram analysis does not identify it, which is against a common expectation that metaprogram analysis should identify biologically meaningful gene sets. To clarify, these gene sets are actually diverse at the. patient level, representing the **inter**-tumoral heterogeneity, whereas metaprogram analysis is designed to address **intra**-tumoral heerogeneity. This is also why we suggest the **archetype analysis** ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)) to address **inter**-tumor heterogeneity, making these two sets of analysis complementary to each other to better understand cancer cells. 
+>Metaprogram analysis is good at resolving intra-tumoral heterogeneity. The **caveat** of metaprogram analysis is that it is less likely to identify any gene set uniformly expressed by all cells in a sample. For example, an AR-related gene set is uniformly expressed in a high level in all cancer cells in some patients (i.e., the luminal hormone responsive archetype). But the metaprogram analysis does not identify it, which is against a common expectation that metaprogram analysis should identify biologically meaningful gene sets. To clarify, these gene sets are actually diverse at the patient level, representing the **inter**-tumoral heterogeneity, whereas metaprogram analysis is designed to address **intra**-tumoral heerogeneity. This is also why we suggest the **archetype analysis** ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)) to address **inter**-tumor heterogeneity, making these two sets of analysis complementary to each other to better understand cancer cells. 
 >
 >
 
