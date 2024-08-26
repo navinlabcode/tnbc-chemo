@@ -83,7 +83,10 @@ In this case of 30 tentative metaprograms, over-clustering is obvious. If the NM
 
 After determining the metaprograms, the <kbd>metamodule_fnmf.s2c.R</kbd> and <kbd>metamodule_fnmf.s2e.alt.R</kbd> also generates the final data visualization of metaprograms. 
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/heatmap.NMFs_jaccard_to_modules.M13.by_hclust_manual.pdf.png?raw=true" width="500"> 
+| Final metaprograms                                                                                                                                                                             | Patient number of metaprograms                                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/heatmap.NMFs_jaccard_to_modules.M13.by_hclust_manual.pdf.png?raw=true" width="500"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/jaccard-manual.barplot.num_samples_per_module.pdf.png?raw=true" width="300"> |
+
 
 
 ### Step 3. Determining marker genes of metaprograms
