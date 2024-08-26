@@ -98,54 +98,76 @@ Rscript analysis/scripts/metamodule_fnmf.s3.R
 
 **Output**
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/metaprogram_marker_gene.png?raw=true" width="400">
+Marker genes of metaprograms. Top marker genes have higher contributions to the corresponding metaprogram. 
+
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/metaprogram_marker_gene.png?raw=true" width="600">
 
 ## Determining cellular frequencies of metaprograms
 
+In brief, for each metaprogram, we calculate module scores in cancer cells. Then we determine a cell is expressing the meteproram and termed the metaprogram-positive if the module score is great than 0.1. Last, cell frequency of a metaprogram in a sample is the ratio of the number of the metaprogram-positive cancer cells and the total cancer cell number in the sample. 
+
 **Rscript files**: 
 
-- <kbd>analysis/scripts/xxx.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/xxx.R)). 
-
+- <kbd>analysis/scripts/metamodule_cell_frequency.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/metamodule_cell_frequency.R)). 
 
 **Synopsis**
 
 ``` console
-Rscript 
+Rscript analysis/scripts/metamodule_cell_frequency.R
 ```
-
-| Parameter             | Meaning                                                 |
-| --------------------- | ------------------------------------------------------- |
-
-
 
 **Output**
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/yy.png?raw=true" width="400">
+- Module scores of metaprograms in single cancer cells
+- Cellular frequencies of metaprograms in each sample
+- Comparison of module scores and cell frequencies of metaprograms in pCR v.s. RD. 
+- Comparison of cell frequencies of metaprograms across the four archetypes. 
+
+| Module scores of metaprograms in an example                                                                                                                     | Cell frequency differences of metaprograms in pCR v.s. RD                                                                                                                | Cell frequency differences of metaprograms across archetypes                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/demo_MM.ARTC100.score.pdf.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/lolipop.cell_fraction_diff.PCR.pdf.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/heatmap.cell_fraction.nmf4.pdf.png?raw=true" width="300"> |
+
+
+
+
+| Boxplot comparing module scores of M5-IFN in pCR v.s. RD                                                                                                                                         | Boxplot comparing cell frequencies of M5-IFN in pCR v.s. RD                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/VlnPlot.bypcr.Signature_M05__Interferon_Seurat.patient.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/VlnPlot.bypcr.M05__Interferon.cell_pct.pdf.png?raw=true" width="400"> |
+
+Boxplots are also generated for the other metaprograms. M5-IFN is simply an example
+
 
 ---
 
 ## Rationale
 
+*Why not computationally integrate all cancer cells to identify metaprograms?*
+
+Performing the classical 'integration-clustering' strategy on cancer cells could be an approach to identify metaprograms. Yes, it was once used in a paper ([Karaayvaz, M. et al. 2018](https://www.nature.com/articles/s41467-018-06052-0#Fig2)), which considered 'patients' as batches and computationally integrated datasets. However, patients could represent meaningful biological factors, for example, some subtypes of patients. It is not easy to justify whether computational integration over- or under-corrects the batch effects and the biological factors. Therefore, the metaprogram analysis is suggested.  
+
+*Why not perform NMF on all single cells to identify metaprograms?*
+Simply performing NMF on all single cells could be an approach to identify metaprograms. However, there are 3 problems. 1) It is not easy to justify the number of ranks of NMF. In theory, NMF is expected to reveal the possibly meaningful biological factors among the cells. If the rank is small (e.g., R=4), NMF would probably identify the most dominating factors separating cancer cells, which could be our archetypes or any other sub-typing categories. With the rank number is getting increased, NMF would tend to pick up other less dominating factors, which could be metaprograms or any other gene pathways. If the rank is very high (e.g., R=1000), many noisy gene signatures are expected to show up. Therefore, the 'sweat point' of ranks is not easy to identify. 2) It takes long time to perform NMF on all cancer cells even with a fixed rank. 3) It requires re-performing NMF on all cells if there are new patient data coming in. Token together, simply performing NMF on all cells has great challenges in scientific rational and practical operation. 
+
+
 *Why not use the top 50 genes to define marker genes for each NMF factor?*
 
 Based on the $$W$$ matrix after running NMF , choosing an arbitrary number of top genes (e.g., top 50) for each factor could be an approach to determine marker genes of each factor (i.e., program). But we did not use it because, for example, the top 37th gene in a factor $a$ could be the top 4th gene in another factor $b$, making the 37th gene failing the definition of marker gene for the factor $a$. Besides, it not easy to justify why top 50. What about top 30 or top 100 ? Therefore, we used the strategy as previously described ([Moncada, R. et al. 2020](https://doi.org/10.1038/s41587-019-0392-8)), which make sure the marker genes of each NMF factor (i.e., program) have the highest contribution to the corresponding factor. 
 
-
-*Why not computationally integrate all cells?*
-
-*Why not perform NMF on all single cells?*
-
 *Why not use consensus NMF ([Kotliar, et al. 2019](https://doi.org/10.7554/eLife.43803))?*
 
->[!NOTE]
-> *A possible limitation of metaprogram analysis*
->
->
->
->
->
->
+Consensus NMF (cNMF) appears similar to the metaprogram analysis as there are multiple runs of NMF, however, they are distinct. In general, NMF works like principal component analysis (PCA) to break down an input gene expression matrix (genes by cells) to two matrices: one is in a shape of genes by factors (or components) and the other is factors (or components) by cells. Unlike PCA, the result of NMF is not deterministic, meaning that different runs of NMF using the same input gene expression matrix end up with different results. In contrast, PCA is deterministic. For example, the first PCA components always explains the highest variation existing in the data. Re-running PCA with the same input always have the same results. To address this problem of 'randomness' of NMF, consensus NMF is developed ([Kotliar, et al. 2019](https://doi.org/10.7554/eLife.43803)), which essentially perform NMF multiple times to find the consensus results of all the NMF runs. 
 
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/cNMF.png?raw=true" width="300"> |
+| ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Image adapted from the original paper ([Kotliar, et al. 2019](https://doi.org/10.7554/eLife.43803))                                        |
+
+
+>[!NOTE]
+> *Caveat of metaprogram analysis*
+>
+>Metaprogram analysis is good at resolving intra-tumoral heterogeneity. However, metaprogram analysis is *less* likely to identify any gene set if it is uniformly expressed by all cells in a sample. For example, the AR-related gene set is uniformly expressed in a high level in all cancer cells in some patients (i.e., the luminal hormone responsive archetype). But metaprogram analysis does not identify it, which is against a common expectation that metaprogram analysis should identify biologically meaningful gene sets. To clarify, these gene sets are at the patient level, representing the *inter*-tumoral heterogeneity, whereas metaprogram analysis is designed to address *intra*-tumoral heerogeneity. This is also why we suggest the archetype analysis ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)) to address inter-tumor heterogeneity, making these two sets of analysis complementary to each other. 
+>
+>
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$
