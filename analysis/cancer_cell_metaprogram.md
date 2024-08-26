@@ -151,7 +151,7 @@ Boxplots are also generated for the other metaprograms. M5-IFN is simply an exam
 
 ***Why not computationally integrate all cancer cells to identify metaprograms?***
 
-Performing the classical 'integration-clustering' strategy on cancer cells could be an approach to identify metaprograms. Yes, it was once used in a paper ([Karaayvaz, M. et al. 2018](https://www.nature.com/articles/s41467-018-06052-0#Fig2)), which considered 'patients' as batches and computationally integrated datasets. However, patients could represent meaningful biological factors, for example, some subtypes of patients. It is not easy to justify whether computational integration over- or under-corrects the batch effects and the biological factors. Therefore, the metaprogram analysis is suggested.  
+Performing the classical 'integration-clustering' strategy on cancer cells could be an approach to identify metaprograms. Yes, it was once used in a paper ([Karaayvaz, M. et al. 2018](https://www.nature.com/articles/s41467-018-06052-0#Fig2)), which considered 'patients' as batches and computationally integrated datasets. However, patients could represent meaningful biological factors, for example, some subtypes of patients. It is not easy to justify whether computational integration over- or under-corrects the batch effects and the biological factors. Therefore, we do not recommend relying on computational integration. 
 
 ***Why not perform NMF on all single cells to identify metaprograms?***
 
@@ -166,9 +166,9 @@ Based on the $$W$$ matrix after running NMF , choosing an arbitrary number of to
 
 Consensus NMF (cNMF) ([Kotliar, et al. 2019](https://doi.org/10.7554/eLife.43803)) appears similar to the metaprogram analysis as there are multiple runs of NMF, however, they are distinct. In general, NMF works like principal component analysis (PCA) to break down an input gene expression matrix (genes by cells) to two matrices: one is in a shape of genes by factors (or components) and the other is factors (or components) by cells. Unlike PCA, the result of NMF is not deterministic, meaning that different runs of NMF using the same input gene expression matrix end up with different results. In contrast, PCA is deterministic. For example, the first PCA components always explains the highest variation existing in the data. Re-running PCA with the same input always have the same results. Therefore, to address the problem of 'randomness' in NMF, consensus NMF is developed, which essentially performs NMF multiple times to find the consensus results of all NMF runs. 
 
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/cancer_metaprograms/cNMF.png?raw=true" width="300"> |
-| ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Image adapted from the original cNMF paper ([Kotliar, et al. 2019](https://doi.org/10.7554/eLife.43803))                                        |
+***Why are not the cellular frequencies of metaprograms summed to 100%? ***
+
+In contrast to immune cells that have specific cell state identities, cancer cells could be 'multi-tasking' in expressing multiple gene metaprograms. For example, it could simultaneously express hypoxia-related genes reflecting the local tumor environment and express interferon signaling-related genes to respond to the nearby immune cells. Therefore, in our study, cancer cells are not designated to a specific cell identity. The sum of cellular frequencies of cancer cells expressing metaprograms is not necessarily 100% for a tumor. 
 
 
 >[!NOTE]

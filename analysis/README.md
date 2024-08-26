@@ -25,9 +25,9 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                                    | Main method                                            | Related figures |
 | ----------------------------------------------------------- | ------------------------------------------------------ | --------------- |
-| Identifying metaprograms [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/cancer_cell_metaprogram.md#identifying-metaprograms-of-cancer-cells)                         | non-negative matrix factorization at single-cell level | Fig. 3          |
-| Determining cellular frequencies of metaprograms [(link)]() | Module score                                           | Fig. 3          |
-| Inferring cell phases of cancer cells [(link)]()            | Module score                                           | Fig. 3          |
+| Identifying metaprograms [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/cancer_cell_metaprogram.md#gene-expression-metaprograms-of-cancer-cells)                         | non-negative matrix factorization at single-cell level | Fig. 3          |
+| Determining cellular frequencies of metaprograms [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/cancer_cell_metaprogram.md#determining-cellular-frequencies-of-metaprograms) | Module score                                           | Fig. 3          |
+| Inferring cell-cycle phases of cancer cells [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/cell_cycle_scoring.md)            | Module score                                           | Fig. 3i          |
 
 
 ## Cell states of immune and stromal cell types
