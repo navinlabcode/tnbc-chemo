@@ -69,11 +69,11 @@ Analysis are accompanied with detailed instructions. See below.
 
 
 
-## Generic analysis
+<!-- ## Generic analysis -->
 
-| Analysis                                                             |
-| -------------------------------------------------------------------- |
-| Gene enrichment analysis                                             |
-| Differentially expressed genes analysis for single-cell RNA-seq data |
-| Differentially expressed genes analysis for bulk RNA-seq data        |
+<!-- | Analysis                                                             | -->
+<!-- | -------------------------------------------------------------------- | -->
+<!-- | Gene enrichment analysis                                             | -->
+<!-- | Differentially expressed genes analysis for single-cell RNA-seq data | -->
+<!-- | Differentially expressed genes analysis for bulk RNA-seq data        | -->
 
