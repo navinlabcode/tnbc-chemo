@@ -10,6 +10,7 @@ suppressPackageStartupMessages({
     library(matrixStats)
     library(tictoc); library(cli)
     library(readr); library(tidyverse)
+    source('util.ruok.R')
 })
 
 args = commandArgs(trailingOnly=TRUE)
@@ -81,7 +82,7 @@ for (r in nmf_rank) {
 }
 
 suppressPackageStartupMessages({
-    library(ruok)
+    source('util.ruok.R')
     library(ComplexHeatmap)
     library(ggpubr)
     library(ggplot2)
