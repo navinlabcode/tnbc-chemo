@@ -30,18 +30,18 @@
 
 | Computationally 'best' rank number                                                                                                                                     | Biologically 'best' rank number                                                                                                                                 |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/survey_ranks.silhouette.on_sample_corr.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/pheatmap.cut.sample_correlation.pdf.png?raw=true" width="400"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/survey_ranks.silhouette.on_sample_corr.pdf.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/pheatmap.cut.sample_correlation.pdf.png?raw=true" width="500"> |
 
 
 | Final archetypes                                                                                                                                  | GSEA                                                                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/expression.scaled.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/enricher.heatmap.anno_modules.MSigDBHallmark.pdf.png?raw=true" width="400"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/expression.scaled.pdf.png?raw=true" width="500"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/enricher.heatmap.anno_modules.MSigDBHallmark.pdf.png?raw=true" width="500"> |
 
 
 
 | Clinically druggable genes of archetypes                                                                                                                                |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/expression.boxplot.clinical_genes_combo.pdf.png?raw=true" width="400"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/expression.boxplot.clinical_genes_combo.pdf.png?raw=true" width="900"> |
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$

@@ -14,7 +14,7 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                                           | Main method                                                                       | Related figures |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------------- | --------------- |
-| Identifying archetypes [(link)]()                                  | non-negative matrix factorization at pseudo-bulk level                            | Fig. 2, Fig. S2          |
+| Identifying archetypes [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)                                  | non-negative matrix factorization at pseudo-bulk level                            | Fig. 2, Fig. S2          |
 | Identifying high cancer cell purity spots of Visium [(link)]()      | CopyKAT inferring copy number alterations for Visium spatial transcriptomics data | Fig. 2, Fig. S2 |
 | Clinical association of archetypes and response groups [(link)]()  | Contingency table and chi-squared test                                            | Fig. 2          |
 | Clinical association of archetypes and overall survival [(link)]() | Cox proportional-hazards model                                                    | Fig. 2          |
