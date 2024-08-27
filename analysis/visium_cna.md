@@ -23,7 +23,7 @@
 
 | Justify the cutoff of CNA strength to propose the high tumor purity spots                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/msq_box_for_cutoff_selection.pdf.png?raw=true" width="600"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/msq_box_for_cutoff_selection.pdf.png?raw=true" width="900"> |
 
 
 | CNA inference results in a sample                                                                                                                   | Spatial locations of the high tumor purity spots                                                                                                 |
