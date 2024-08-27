@@ -1,26 +1,22 @@
 <!-- Written by Yun Yan -->
 
-# what
+# Archetypes and chemotherapy response groups
 
-**Related figures**: 
+**Related figures**: Fig. 2
 
+**Rscript file path**: 
 
-**Rscript file path**: <kbd>analysis/scripts/xxx.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/xxx.R)). 
+- <kbd>analysis/scripts/std.table_patient_meta_info.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/std.table_patient_meta_info.R)). 
 
 **Synopsis**
 
-``` console
-Rscript 
-```
-
-| Parameter             | Meaning                                                 |
-| --------------------- | ------------------------------------------------------- |
-
-
+Run <kbd>std.table_patient_meta_info.R</kbd> to create contingency table between the archetypes and chemotherapy responses of patients and perform statistical test (chi-squared test) of significance. Moreover, this script can be used to study any two categorical features designated to patients. 
 
 **Output**
 
-**Rationale**
+| Contingency table                                                                                                                                            | Chi-squared test                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/psbulk_nmf4_X_pCR_status.viz.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/psbulk_nmf4_X_pCR_status.viz.chisquare_test.png?raw=true" width="300"> |
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$
