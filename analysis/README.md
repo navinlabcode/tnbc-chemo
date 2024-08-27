@@ -46,8 +46,8 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                            | Related figures |
 | --------------------------------------------------- | --------------- |
-| Identifying ecotypes [(link)]()                     | Fig. 5          |
-| Comparing ecotypes across patient groups [(link)]() | Fig. 5          |
+| Identifying ecotypes [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ecotype.md#ecotype-analysis)                     | Fig. 5          |
+| Comparing ecotypes across patient groups [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ecotype.md#comparing-ecotypes-across-patient-groups) | Fig. 5          |
 
 
 
