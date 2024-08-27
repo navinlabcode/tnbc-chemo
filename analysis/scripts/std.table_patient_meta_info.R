@@ -63,7 +63,7 @@ df <- read_rds('/volumes/USR1/yyan/project/tnbc_pre_atlas/export_to_paper/patien
 colnames(df)
 library(patchwork)
 
-z_opts = c('BRCA_status', 'pCR_status', 'archetype')
+z_opts = c('pCR_status', 'archetype')
 p <- ggpubr::ggarrange(
   plotlist = lapply(z_opts, function(z) {
     qbarplot_table_cat(df[[z]], do.prop.table = F, name_x = z)
