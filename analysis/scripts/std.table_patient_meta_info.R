@@ -5,8 +5,9 @@
 library(ggpubr)
 library(tidyverse)
 library(gtools)
-library(ruok)
 library(colorspace)
+source('util.ruok.R')
+
 dir_res <-'./patient_meta_info_crosstable'
 fs::dir_create(dir_res)
 
@@ -133,7 +134,7 @@ p1 <- df2 %>%
     colorspace::scale_fill_binned_sequential() +
     labs(x=b, y=a, fill='nPatients') +
     scale_y_discrete(limits=rev(cat_a_lvs), labels=pretty_table2str(table(df2$a))) +
-    scale_x_discrete(labels=ruok::pretty_table2str(table(df2$b)))
+    scale_x_discrete(labels=pretty_table2str(table(df2$b)))
 p1
 ggsave(file.path(dir_res, sprintf('%s_X_%s.viz.pdf', a, b)), p1, width = 5, height = 4)
 

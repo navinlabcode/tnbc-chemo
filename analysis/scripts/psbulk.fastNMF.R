@@ -109,7 +109,7 @@ for (r in nmf_rank_vec) {
     
 }
 
-library(ruok)
+source('util.ruok.R')
 library(ComplexHeatmap)
 library(ggpubr)
 library(ggplot2)
@@ -489,7 +489,7 @@ for (r in 4) {
     nmf_markers <- read_rds(file.path(tmp, 'deliver.nmf_markers.tolerant2.rds'))
     
     nmf_markers <- lapply(nmf_markers, head, 15)
-    dict_nmf2genes <- ruok::enframe_list(nmf_markers, name = 'nmf', value = 'gene')
+    dict_nmf2genes <- enframe_list(nmf_markers, name = 'nmf', value = 'gene')
     dict_nmf2genes$gene <- as.character(dict_nmf2genes$gene)
     dict_nmf2genes$nmf <- as.character(dict_nmf2genes$nmf)
     dict_nmf2genes <- dict_nmf2genes[!duplicated(dict_nmf2genes$gene), ]
@@ -764,7 +764,7 @@ for (r in c(4) ) { ## r=4 is the final solution
     if (y_name == 'hbca_epithelial') { gene_viz <- hbca_epithelial}
     if (y_name == 'siyuan_epithelial') { gene_viz <- siyuan_epithelial; gene_viz <- lapply(gene_viz, head, 15)}
       
-    dict_y2genes <- ruok::enframe_list(gene_viz, name = 'y', value = 'gene')
+    dict_y2genes <- enframe_list(gene_viz, name = 'y', value = 'gene')
     dict_y2genes$gene <- as.character(dict_y2genes$gene)
     dict_y2genes$y <- as.character(dict_y2genes$y)
     dict_y2genes <- dict_y2genes[!duplicated(dict_y2genes$gene), ]

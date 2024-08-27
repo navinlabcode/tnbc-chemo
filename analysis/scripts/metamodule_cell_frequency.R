@@ -14,7 +14,7 @@
 suppressPackageStartupMessages({
     library(Seurat); library(S4Vectors)
     library(tidyverse); library(ggplot2); library(ggpubr); library(patchwork)
-    theme_set(theme_pubr(base_size = 12, legend='right')); library(ruok)
+    theme_set(theme_pubr(base_size = 12, legend='right'))
     library(cli); library(tictoc); library(glue); library(scales); library(tools)
     library(ComplexHeatmap); library(circlize)
     library(purrr); library(stringr); library(readr)
@@ -36,6 +36,8 @@ suppressPackageStartupMessages({
         return(res)
     }
     source('util.nmf.viz.R')
+    source('util.ruok.R')
+
 })
 
 
@@ -803,7 +805,7 @@ for (cfm in classifier_method) {
     colnames(mat_patient_cellpct)
     rownames(mat_patient_cellpct)
     
-    mat_group_cellpct <- ruok::mat_tapply(
+    mat_group_cellpct <- mat_tapply(
         mat_patient_cellpct, 
         patient_info_nmf4[rownames(mat_patient_cellpct)], FUN = mean)
     

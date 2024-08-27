@@ -16,7 +16,7 @@ Run <kbd>std.table_patient_meta_info.R</kbd> to create contingency table between
 
 | Contingency table                                                                                                                                            | Chi-squared test                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/psbulk_nmf4_X_pCR_status.viz.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/psbulk_nmf4_X_pCR_status.viz.chisquare_test.png?raw=true" width="300"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/psbulk_nmf4_X_pCR_status.viz.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/psbulk_nmf4_X_pCR_status.viz.chisquare_test.png?raw=true" width="400"> |
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$

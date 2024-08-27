@@ -1,11 +1,16 @@
 <!-- Written by Yun Yan -->
 
-# what
+# Archetypes and Overall Survival
 
-**Related figures**: 
+**Related figures**: Fig. 2i
 
+**Rscript file path**: 
 
-**Rscript file path**: <kbd>analysis/scripts/xxx.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/xxx.R)). 
+- <kbd>analysis/scripts/KM_METABRIC_ALT.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/KM_METABRIC_ALT.R)). 
+
+**Data**:
+
+- We selected the patients data from the *public* METABRIC cohort that had TNBC and received chemotherapy. See the METABRIC patient IDs [here](https://github.com/navinlabcode/tnbc-chemo/tree/main/other).  
 
 **Synopsis**
 
@@ -17,8 +22,8 @@ Rscript
 | --------------------- | ------------------------------------------------------- |
 
 
-
 **Output**
+
 
 **Rationale**
 
