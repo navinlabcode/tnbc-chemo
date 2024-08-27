@@ -26,7 +26,7 @@
 
 | Justify the clustering resolution to define ecotypes                                                                                                          | Alleviate randomness of community detection                                                                                   |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/lineplot_jusitfy_number_ecohubs.pdf.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/yyy.png?raw=true" width="400"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/lineplot_jusitfy_number_ecohubs.pdf.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/igraph.feature_correlations.diagnosis_consensus_clustering.pdf.png?raw=true" width="400"> |
 
 
 | Co-occurrence (correlation matrix)                                                                                                                             | Graph of ecotypes                                                                                                                                                  |
@@ -70,7 +70,7 @@
 
 | Graph similarity between archetypes                                                                                                                                             | Graph similarity between archetypes and response groups                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/heatmap_graph_similarity_within_archetypes_zscore.pdf.png?raw=true" width="450"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/heatmap_graph_similarity_response_x_archetype_zscore.pdf.png?raw=true" width="450"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/heatmap_graph_similarity_within_archetypes_zscore.pdf.png?raw=true" width="300"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ecotype/heatmap_graph_similarity_response_x_archetype_zscore.pdf.png?raw=true" width="300"> |
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$
