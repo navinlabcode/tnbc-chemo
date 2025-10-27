@@ -46,10 +46,10 @@ Using the internal control patients, F1-F4 highly concordant with the archetypes
 
 By this step, each patient in the external cohort has been assigned to archetypes. Therefore, it is straighforward to perform further comparisons (e.g., archetypes v.s. NAC response; archetypes v.s. archetypes expressions) as described in previous tutorials.
 
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/arc_pred_brightness.response.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/rchetype/arc_pred_brightness.response.chitest.png?raw=true" width="200"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/arc_pred_brightness.response.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/arc_pred_brightness.response.chitest.png?raw=true" width="200"> |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/arc_pred_brightness.boxplot?raw=true" width="400"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/archetype/arc_pred_brightness.boxplot.png?raw=true" width="400"> |
 | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
