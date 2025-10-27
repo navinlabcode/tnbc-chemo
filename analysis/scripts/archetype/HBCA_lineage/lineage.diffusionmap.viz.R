@@ -382,26 +382,3 @@ for (dc in c(paste0("DC", 1:3))) {
 }
 
 
-
-
-
-
-
-
-if (F) {
-    # https://biocellgen-public.svi.edu.au/mig_2019_scrnaseq-workshop/trajectory-inference.html
-    # dm: DiffusionMap object
-    ggplot(
-        df_ref,
-        aes(
-            x = pseudotime_diffusionmap,
-            y = cell_type2, colour = cell_type2
-        )
-    ) +
-        geom_quasirandom(groupOnX = FALSE) +
-        scale_color_manual(values = my_color) +
-        theme_classic() +
-        xlab("Diffusion map pseudotime (first diffusion map component)") +
-        ylab("Timepoint") +
-        ggtitle("Cells ordered by diffusion map pseudotime")
-}

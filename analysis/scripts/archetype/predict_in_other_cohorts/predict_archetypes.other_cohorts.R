@@ -30,28 +30,30 @@ if (length(cmdargs) > 0) {
     study_name <- cmdargs[1]
     f_type <- cmdargs[2]
 } else {
+    ## Examples of the available dataset ## 
     study_name <- "artemis_pretx"
     f_type <- "psbulk_allcells"
+    
     study_name <- "2024Shiao"
     f_type <- "TNBC_baseline_cancercells"
+    
     study_name <- "METABRIC"
     f_type <- "chemoYes"
+    
     study_name <- "ISPY990"
     f_type <- "arm_Ctr"
+    
     study_name <- "SCANB"
     f_type <- "dUTP"
-    # study_name <- "BrighTNess"
-    # f_type <- "arm_PaclitaxelCarboplatin"
-    # study_name <- "BrighTNess"
-    # f_type <- "arm_ALL"
-    # study_name <- "BrighTNess"
-    # f_type <- "arm_CHEMO"
-    # f_type <- "arm_Paclitaxel"
 
-    # study_name <- "NCPark2020"
-    # f_type <- "TNBCPreTXChemo"
+    study_name <- "BrighTNess"
+    f_type <- "arm_PaclitaxelCarboplatin"
+    f_type <- "arm_ALL"
+    f_type <- "arm_CHEMO"
+    f_type <- "arm_Paclitaxel"
 
     study_name <- "NCPark2020"
+    f_type <- "TNBCPreTXChemo"
     f_type <- "TNBCPreTX"
 }
 #------------------ ~~~ Load lib ~~~ --------------------
@@ -228,12 +230,7 @@ absorb_labels <- function(query, ref) {
 }
 dict_factor2ARC <- absorb_labels(sample2nmf[names(lib_arcs)], lib_arcs)
 dict_factor2ARC
-#------ Adhoc fix the factor-to-archtypes ------
-if (study_name == 'SCANB' & f_type == 'dUTP') {
-    #
-    # dict_factor2ARC['F1'] <- 'ARC1'    
-    # Not suggested because the `matched_rate` decreased from 0.722 to 0.67
-}
+
 #------ Decide archetypes for the input samples ------
 arc_pred <- sample2nmf[colnames(mat_query)]
 arc_pred <- structure(dict_factor2ARC[arc_pred],

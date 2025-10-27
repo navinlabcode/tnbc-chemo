@@ -5,20 +5,20 @@ Analysis are accompanied with detailed instructions. See below.
 
 ## Identifying aneuploid cells
 
-| Analysis                                                                                                                           | Related figures  |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| Identifying aneuploid cells [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/identifying_aneuploid_cells.md) | Fig. 1, Fig. S1. |
+| Analysis                                                                                                                           | Related figures               |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| Identifying aneuploid cells [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/identifying_aneuploid_cells.md) | Fig. 1, Extended Data Fig. 1. |
 
 
 ## Cancer-intrinsic archetypes
 
-| Analysis                                                                                                                                                 | Related figures |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| Identifying archetypes [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)                                              | Fig. 2, Fig. S2 |
-| Identifying high cancer cell purity spots of Visium [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/visium_cna.md)                | Fig. 2, Fig. S2 |
-| Clinical association of archetypes and response groups [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_and_response.md) | Fig. 2          |
-| Clinical association of archetypes and overall survival [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_and_OS.md)      | Fig. 2          |
-
+| Analysis                                                                                                                                                 | Related figures              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| Identifying archetypes [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)                                              | Fig. 2, Extended Data Fig. 2 |
+| Identifying high cancer cell purity spots of Visium [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/visium_cna.md)                | Fig. 2, Extended Data Fig. 2 |
+| Clinical association of archetypes and response groups [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_and_response.md) | Fig. 2                       |
+| Clinical association of archetypes and overall survival [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_and_OS.md)      | Fig. 2                       |
+| Predict archetypes in external cohorts [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_prediction.md)                   | Fig. 2, Extended Data Fig. 2 |
 
 
 
