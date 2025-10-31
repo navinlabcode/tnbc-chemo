@@ -66,7 +66,7 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                                  | Related figures |
 | --------------------------------------------------------- | --------------- |
-| Training and testing the cell-based classifier [(link)]() | Fig. 6a-c       |
+| Training and testing the cell-based classifier [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/) | Fig. 6a-c       |
 
 
 
@@ -74,8 +74,8 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                      | Related figures |
 | --------------------------------------------- | --------------- |
-| Training the gene-based classifier [(link)]() | Fig. 6e-g       |
-| Testing the gene-based classifier [(link)]()  | Fig. 6e-g       |
+| Training the gene-based classifier [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ML_13g.md) | Fig. 6d-g       |
+| Testing the gene-based classifier using other cohorts [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ML_13g.md)  | Fig. 6d-g       |
 
 
 

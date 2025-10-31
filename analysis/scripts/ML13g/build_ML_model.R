@@ -50,12 +50,6 @@ if (T) {
       "MM_alt_clean_byscore_wardD2", "deliver.mm_markers.rds"
     )
   )
-  # module_content <- read_rds(
-  #   file.path('/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102',
-  #             'lv01.aneuploidy_tri_type.aneuploid.pure5',
-  #             'metamodule_fnmf',
-  #             'MM_alt_clean_byscore_wardD2', 'deliver.mm_top_genes.rds')
-  # )
   str(module_content)
   module_focuse <- setdiff(names(module_content), "M14")
   module_focuse_bio <- c(
@@ -373,40 +367,6 @@ ggsave(
 pred_prob <- predict(mulv_model, df_logistic[, covariates], type = "response")
 head(pred_prob)
 hist(pred_prob)
-
-## suggest a possible cutoff
-cutoff_choices <- seq(0, 1, by = 0.001)
-cutoff_accuracy <- sapply(cutoff_choices, function(s) {
-  pred_label <- as.numeric(pred_prob > s)
-  return(mean(pred_label == df_logistic$outcome_y))
-})
-p <- data.frame(cutoff = cutoff_choices, accuracy = cutoff_accuracy) %>%
-  ggplot(aes(x = cutoff, y = accuracy)) +
-  geom_line() +
-  theme_pubr()
-suggested_cutoff <- cutoff_choices[max(which(cutoff_accuracy == max(cutoff_accuracy)))]
-cat("Suggested cutoff=", suggested_cutoff, "\n")
-
-
-pred_label <- as.numeric(pred_prob > suggested_cutoff)
-print(table(pred = pred_label, obs = df_logistic$outcome_y))
-cat("Accuracy=", mean(pred_label == df_logistic$outcome_y)) # 0.8536585
-
-roc_obj <- roc(response = df_logistic$outcome_y, predictor = pred_prob)
-
-pdf(file.path(
-  dir_res,
-  sprintf("%s.multivariable_logistic_regression_model.ROC_train.pdf", y_choice_str)
-), useDingbats = F)
-plot.roc(
-  roc_obj,
-  main = sprintf(
-    "AUC=%.3f Accuracy=%.3f",
-    roc_obj$auc, mean(pred_label == df_logistic$outcome_y)
-  )
-)
-dev.off()
-print(roc_obj$auc) # 0.8498
 
 library(ggpubr)
 p <- data.frame(prob = pred_prob, obs = df_logistic$outcome_y) %>%

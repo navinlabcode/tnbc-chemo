@@ -37,12 +37,8 @@ if (length(cmdargs) > 0) {
 
     study_name <- "METABRIC"
     f_type <- "CHEMOyes"
-    study_name <- "SCANB"
-    f_type <- "dUTP"
 }
 
-cat("[done]")
-timestamp()
 #------ load the 13-gene model  ------
 
 dir_model <- file.path(
@@ -394,43 +390,7 @@ for (datatype in c("Query", "Query_MultiNorm", "Query_SingleNorm", "Query_Single
     )
 
 }
-for (datatype in c("Query", "Query_MultiNorm", "Query_SingleNorm", "Query_SingleNormCss")) {
-    roc_obj <- roc(response = df$response, predictor = df[[sprintf("risk_score_%s", datatype)]])
-    pdf(file.path(dir_res, sprintf("ROC.risk_score_vs_response_%s.pdf", datatype)), useDingbats = F)
-    plot.roc(
-        roc_obj,
-        main = sprintf("AUC=%.3f", roc_obj$auc), xlim = c(1, 0), ylim = c(0, 1), asp = 1
-    )
-    dev.off()
-    print(roc_obj$auc)
-}
 
-
-if (study_name == "2021AyseBassez") {
-    df$response <- case_when(df$response == "n/a" ~ NA,
-        .default = as.character(df$response)
-    )
-    cohort_opts <- unique(df$cohort)
-    df$logic_has_cancer_cells <- ifelse(df$sample_has_cancer_cells > 0, "yes", "no")
-    p_list <- lapply(cohort_opts, function(coh) {
-        df_s <- df %>%
-            dplyr::filter(cohort == coh)
-        ggplot(df_s, aes(x = response, y = risk_score)) +
-            geom_boxplot(outlier.shape = NA) +
-            stat_compare_means(comparisons = list(c("R", "NR"))) +
-            geom_quasirandom(aes(color = logic_has_cancer_cells)) +
-            scale_x_discrete(limits = c("R", "NR")) +
-            labs(title = coh, color = "with cancer cells") +
-            scale_color_manual(values = c("yes" = "#0099F9", "no" = "orange4")) +
-            coord_cartesian(ylim = c(0, 1))
-    })
-
-    p <- patchwork::wrap_plots(p_list, nrow = 1, guides = "collect")
-    p
-    ggsave(file.path(dir_res, "boxplot.risk_score_vs_response.pdf"), p,
-        width = 5, height = 3, useDingbats = F
-    )
-}
 
 if (study_name == "artemis_pretx") {
     # "pCR_status" "RCB_status" "archetype"

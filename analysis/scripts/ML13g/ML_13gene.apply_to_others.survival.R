@@ -35,9 +35,8 @@ if (length(cmdargs) > 0) {
 } else {
     study_name <- "METABRIC"
     f_type <- "chemoYes"
-    # study_name <- "SCANB"
-    # f_type <- "dUTP"
 }
+
 #------ load the 13-gene model  ------
 
 dir_model <- file.path(
