@@ -7,18 +7,19 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                                                                                                           | Related figures               |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| Identifying aneuploid cells [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/identifying_aneuploid_cells.md) | Fig. 1, Extended Data Fig. 1. |
+| Identifying aneuploid cells [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/identifying_aneuploid_cells.md) | Fig. 1; Extended Data Fig. 1. |
 
 
 ## Cancer-intrinsic archetypes
 
 | Analysis                                                                                                                                                 | Related figures              |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| Identifying archetypes [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)                                              | Fig. 2, Extended Data Fig. 2 |
-| Identifying high cancer cell purity spots of Visium [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/visium_cna.md)                | Fig. 2, Extended Data Fig. 2 |
+| Identifying archetypes using scRNA-seq data [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype.md)                         | Fig. 2; Extended Data Fig. 2 |
+| Identifying high cancer cell purity spots of Visium data [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/visium_cna.md)           | Fig. 2; Extended Data Fig. 2 |
+| Identifying cell types (especially aneuploid cells) in Visium HD data [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/visium_hd.md)                            | Extended Data Fig. 2         |
 | Clinical association of archetypes and response groups [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_and_response.md) | Fig. 2                       |
 | Clinical association of archetypes and overall survival [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_and_OS.md)      | Fig. 2                       |
-| Predict archetypes in external cohorts [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_prediction.md)                   | Fig. 2, Extended Data Fig. 2 |
+| Predict archetypes in external cohorts [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/archetype_prediction.md)                   | Fig. 2; Extended Data Fig. 2 |
 
 
 
@@ -38,16 +39,26 @@ Analysis are accompanied with detailed instructions. See below.
 | Analysis                                                            | Related figures |
 | ------------------------------------------------------------------- | --------------- |
 | Identifying cell states of immune and stromal cell types [(link)]() | Fig. 4          |
-| Determining cellular frequencies of cell states [(link)]()          | Fig. 4          |
+| Determining and comparing cell percentages of cell states [(link)]()          | Fig. 4          |
 
 
 
 ## Ecotypes
 
-| Analysis                                            | Related figures |
-| --------------------------------------------------- | --------------- |
-| Identifying ecotypes [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ecotype.md#ecotype-analysis)                     | Fig. 5          |
-| Comparing ecotypes across patient groups [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ecotype.md#comparing-ecotypes-across-patient-groups) | Fig. 5          |
+| Analysis                                                                                                                                                             | Related figures       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| Identifying ecotypes [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ecotype.md#ecotype-analysis)                                             | Fig. 5                |
+| Comparing ecotypes across patient groups [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ecotype.md#comparing-ecotypes-across-patient-groups) | Fig. 5                |
+| Ligand-receptor inference [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/cellchat_ligand_receptor.md)                                        | Extended Data Fig. 8d |
+
+
+## Spatial Niches
+
+| Analysis                                                                                                                           | Related figures |
+| ---------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| Identifying cell types in Xenium data [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/xenium.celltype.md)   | Fig. 1          |
+| Identifying cell states in Xenium data [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/xenium.cellstate.md) | Fig. 3;5        |
+| Identifying spatial niches using Xenium data [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/xenium.spatial_niche.md)         | Fig. 5          |
 
 
 
