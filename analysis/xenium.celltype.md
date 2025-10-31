@@ -12,7 +12,7 @@ This vignette shows how we identify cell types of Xenium data for each patient. 
 
 ## Rationale
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/css_celltyping.png?raw=true" width="400">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/css_celltyping.png?raw=true" width="800">
 
 
 A common challenge when using the default Label Transfer workflow is that it is often difficult to justify the threshold of prediction probability that determines cell identity assignments. For example, if a cell is predicted to be an endothelial cell with a probability of 0.8, is this 0.8 high enough to be confident? What about 0.9 or 0.7? Another challenge is that it is not straightforward to evaluate the performance of Label Transfer on a given dataset, even though Seurat’s Label Transfer is, in itself, a well-designed and robust algorithm.
@@ -43,7 +43,7 @@ We decide to use 10 votes as the threshold, because we find that the cells havin
 
 **Visualization**
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/yyy.png?raw=true" width="400">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/css_celltyping_example.png?raw=true" width="800">
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$
