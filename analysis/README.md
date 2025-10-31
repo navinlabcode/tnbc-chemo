@@ -66,7 +66,7 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                                  | Related figures |
 | --------------------------------------------------------- | --------------- |
-| Training and testing the cell-based classifier [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/) | Fig. 6a-c       |
+| Training and testing the cell-based classifier [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ML_cell.md) | Fig. 6a-c       |
 
 
 
