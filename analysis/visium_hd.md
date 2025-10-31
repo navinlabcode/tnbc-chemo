@@ -31,23 +31,18 @@ A cell is finalized as a 'cancer cell', if it is identified as a 'Tumor' cell in
 - An analysis-ready Seurat object of Visium HD data, which contains the cell types identities, especially the cancer cells. 
 - Module scores of any gene signatures on the cancer cells. 
 
-| Analysis                               | Visualization                                                                                                                                             |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| H&E image                              | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.image.pdf.png?raw=true" width="400">              |
-| Cell types using HBCA as the reference | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.celltype_HBCA.pdf.png?raw=true" width="400">      |
-| Cell types using TNBC as the reference | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.celltype_TNBC.pdf.png?raw=true" width="400">      |
-| Aneuploid cells inferred by CopyKat    | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.copykat.pdf.png?raw=true" width="400">            |
-| Heatmap showing the inferred CNA       | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/copykat_heatmap3.celltypes_css.png?raw=true" width="400"> |
-| Finalized Cancer cells                 | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.Tumor_cells.pdf.png?raw=true" width="400">        |
+**Visualization**
 
+In this tissue example, the cancer cells harbor evident CNA events, and are predicted to be epithelial cells based on the HBCA dataset and the tumor cells based on the TNBC dataset. 
 
 | H&E image                                                                                                                                    | Cell types using HBCA                                                                                                                                | Cell types using TNBC                                                                                                                                | Aneuploid cells                                                                                                                                | Finalized cancer cells                                                                                                                             |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.image.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.celltype_HBCA.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.celltype_TNBC.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.copykat.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.Tumor_cells.pdf.png?raw=true" width="400"> |
 
+
 | Heatmap                                                                                                                                                   |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/copykat_heatmap3.celltypes_css.png?raw=true" width="400"> |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/copykat_heatmap3.celltypes_css.png?raw=true" width="800"> |
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$
