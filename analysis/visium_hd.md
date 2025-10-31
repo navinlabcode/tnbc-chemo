@@ -1,0 +1,38 @@
+<!-- Written by Yun Yan -->
+
+# Identifying cell types in Visium HD data
+
+This vignette shows how we identified cell types (especially cancer cells) in Visium HD data. We primarily used the Robust Cell Type Decomposition (RCTD) method (https://github.com/dmcable/spacexr) to identify cell types. In addition, we used the tool 'Copykat' (https://github.com/navinlabcode/copykat) to infer copy number alterations which further helps identifying aneuploid cells. 
+
+In detail, we performed the following 3 analysis to determine cell types, especially cancer cells. 
+
+- **Analysis 1**. Running RCTD and using our own TNBC scRNA-seq data as the reference data to call cell types. 
+- **Analysis 2**. Running RCTD and using the normal human breast cell atlas scRNA-seq data (PMID: 37380767) as the reference dataset to call cell types. 
+- **Analysis 3**. Running CopyKat to identify the aneuploid cells. 
+
+A cell is finalized as a 'cancer cell', if it is identified as a 'Tumor' cell in Analysis-1, a 'epithelial' cell in Analysis-2, and/or an 'aneuploid' cell in Analysis-3. 
+
+
+**Related figures**:
+
+- Extended Data Fig. 2i
+
+**Rscript file path**: 
+
+- <kbd>analysis/scripts/visiumHD/visium_HD.initiate_direct.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visium_HD.initiate_direct.R)). Initiate the Seurat object of reading the Visium HD data of each sample. 
+- <kbd>analysis/scripts/visiumHD/visium_HD.prepare.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visium_HD.prepare.R)). Make the analysis-ready object. 
+- <kbd>analysis/scripts/visiumHD/visium_HD.identify_celltype.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visium_HD.identify_celltype.R)). Identifying cell types using the scRNA-seq data of either the TNBC or the normal breast tissue as the reference data to run RCTD. 
+- <kbd>analysis/scripts/visiumHD/visium_HD.copykat_mix.simple.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visium_HD.copykat_mix.simple.R)). Inferring the copy number alterations and identifying aneuploid cells. 
+- <kbd>analysis/scripts/visiumHD/visium_HD.finalize_cancer_cells.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visium_HD.finalize_cancer_cells.R)). Finalizing the identities of cell types especially the cancer cells. 
+- <kbd>analysis/scripts/visiumHD/visiumHD.addmodulescore_ForCancerCells.alt.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visiumHD.addmodulescore_ForCancerCells.alt.R)). Calculating module scores of any gene signatures on the cancer cells only. 
+
+**Output**
+
+- An analysis-ready Seurat object of Visium HD data, which contains the cell types identities, especially the cancer cells. 
+- Module scores of any gene signatures on the cancer cells. 
+
+
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xxx/yyy.png?raw=true" width="400">
+
+
+$${\color{grey}\text{Written by Yun Yan}}$$
