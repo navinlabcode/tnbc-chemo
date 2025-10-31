@@ -2,7 +2,7 @@
 
 # Comparing cell abundances in pCR and RD patients
 
-We uses the standardized pipeline `std_cell_fraction_test.A_vs_B.R` to compare cell states percentages between the pCR and RD patients. 
+We implements a standardized pipeline `std_cell_fraction_test.A_vs_B.R` to compare cell states percentages between the pCR and RD patients. 
 
 
 **Related figures**:
