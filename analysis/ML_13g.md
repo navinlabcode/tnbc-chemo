@@ -32,10 +32,17 @@
 
 **Output**
 - The predicted risk scores of non-responding to chemotherapy for each patient in the cohort. 
+
 - Boxplot comparing the risk score between the responders and non-responders. 
+
+| BrighTNess                                                                                                                                                                            | I-SPY2                                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ML13g/boxplot.risk_score_vs_response_Query_MultiNorm_brightness.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ML13g/boxplot.risk_score_vs_response_Query_MultiNorm_ispy2.pdf.png?raw=true" width="400"> |
+
 - Survival analysis showing the association of the risk scores and overall survival. 
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ML13g/yyy.png?raw=true" width="400">
-
+| METABRIC                                                                                                                                                                              | SCAN-B                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ML13g/USE.eval_survplot.OS_STATUS.group_by_mean.Query_MultiNorm.pdf.png?raw=true" width="400"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/ML13g/USE.eval_survplot.OS_event.group_by_mean.Query_MultiNorm.pdf.png?raw=true" width="400"> |
 
 $${\color{grey}\text{Written by Yun Yan}}$$
