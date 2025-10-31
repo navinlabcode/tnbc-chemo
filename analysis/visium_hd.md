@@ -7,7 +7,7 @@ This vignette shows how we identified cell types (especially cancer cells) in Vi
 In detail, we performed the following 3 analysis to determine cell types, especially cancer cells. 
 
 - **Analysis 1**. Running RCTD and using our own TNBC scRNA-seq data as the reference data to call cell types. 
-- **Analysis 2**. Running RCTD and using the normal human breast cell atlas scRNA-seq data (PMID: 37380767) as the reference dataset to call cell types. 
+- **Analysis 2**. Running RCTD and using the normal human breast cell atlas (HBCA) scRNA-seq data (PMID: 37380767) as the reference dataset to call cell types. 
 - **Analysis 3**. Running CopyKat to identify the aneuploid cells. 
 
 A cell is finalized as a 'cancer cell', if it is identified as a 'Tumor' cell in Analysis-1, a 'epithelial' cell in Analysis-2, and/or an 'aneuploid' cell in Analysis-3. 
@@ -31,8 +31,14 @@ A cell is finalized as a 'cancer cell', if it is identified as a 'Tumor' cell in
 - An analysis-ready Seurat object of Visium HD data, which contains the cell types identities, especially the cancer cells. 
 - Module scores of any gene signatures on the cancer cells. 
 
-
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xxx/yyy.png?raw=true" width="400">
+| Analysis                               | Visualization                                                                                                                                             |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| H&E image                              | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.image.pdf.png?raw=true" width="400">              |
+| Cell types using HBCA as the reference | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.celltype_HBCA.pdf.png?raw=true" width="400">      |
+| Cell types using TNBC as the reference | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.celltype_TNBC.pdf.png?raw=true" width="400">      |
+| Aneuploid cells inferred by CopyKat    | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.copykat.pdf.png?raw=true" width="400">            |
+| Heatmap showing the inferred CNA       | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/copykat_heatmap3.celltypes_css.png?raw=true" width="400"> |
+| Finalized Cancer cells                 | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/visiumHD/spatial.Tumor_cells.pdf.png?raw=true" width="400">        |
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$
