@@ -17,7 +17,7 @@ Identifying cell states shares the same rationale and workflow as we identify ce
 
 Moreover, there is a unique caveat: what if the marker genes of a novel cell state identified in the reference scRNA-seq data are missing from the default 5,000-gene panel used by Xenium? In such cases, the Label Transfer strategy — and likely any computational method — is inherently limited and will fail to correctly transfer the corresponding cell labels. Therefore, it is essential to first assess whether the default 5,000 genes in the Xenium panel are sufficient to capture all cell states present in the reference scRNA-seq dataset. If critical marker genes are missing, Xenium provides the option to include up to 100 customized genes, which can be strategically selected to recover the missing cell states. In our case, the default 5000 gene panel is sufficient to recover all the cell states, since the cell clusters are well separated, as illustrated in the following figure. 
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/scRNA_sensitivity.png?raw=true" width="900">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/scRNA_sensitivity.png?raw=true" width="600">
 
 Last, because some cell states may be rare, we take advantage of our large cohorts of Xenium samples and integrate samples for each cell type. Then we applied the Label Transfer to identify cell states for each cell type. 
 
@@ -39,7 +39,7 @@ Last, because some cell states may be rare, we take advantage of our large cohor
 
 **Visualization** 
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/Endo.dotplot2.DEGs.cell_state_paper.pdf.png?raw=true" width="400">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/Endo.dotplot2.DEGs.cell_state_paper.pdf.png?raw=true" width="800">
 
 
 $${\color{grey}\text{Written by Yun Yan}}$$
