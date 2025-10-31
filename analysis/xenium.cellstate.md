@@ -1,6 +1,6 @@
 <!-- Written by Yun Yan -->
 
-# Identifying cell types of Xenium data
+# Identifying cell states of Xenium data
 
 This vignette shows how we identify cell states of Xenium data for each patient. The primary approach is Seurat's 'Label Transfer', which transfers cell labels (i.e., cell states in this vignette) of cells in the scRNA-seq data to the Xenium data. 
 
