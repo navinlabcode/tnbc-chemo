@@ -29,23 +29,6 @@ if (length(cmdargs) > 0) {
     b <- cmdargs[7]
 
 } else {
-    f_in <- "/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas/objects_split_into_celltype/Mye/sr3_metadata.df.rds"
-    f_in <- "/volumes/USR1/yyan/project/tnbc_xenium/data_merged_N34/TME/objects_split_into_celltype/Mye/sc_metadata.df.rds"
-    f_in <- "/volumes/USR1/yyan/project/tnbc_xenium/data_merged_N44/TME/sc_metadata.df.rds"
-    f_in  <- "/volumes/USR1/yyan/project/tnbc_xenium/data_merged_N44/spatial_ecotype/ALL/inputs/dataframe.cellmeta_combo.rds"
-    N_CELLS_MORETHAN <- 0
-    on_what <- 'cell_state_paper'
-    
-    f_in <- "/volumes/USR1/yyan/project/tnbc_xenium/data_merged_N44/spatial_ecotype_winner/ALL/scoloc_DT/NB_freq_diff_response/dataframe.cellmeta_combo_with_NB.rds"
-    on_what <- 'NB'
-    by_what <- 'pCR_status'
-    patient_str <- "sample"; a <- 'pCR'; b <- 'RD'
-
-    f_in <- "/volumes/USR1/yyan/project/tnbc_xenium/data_merged_N44/spatial_ecotype_winner/ALL/scNicheRadius/R30/MetaNiche_across_samples/dataframe.cellmeta.allcolumns.with_metaniche_cut10_all_samples.rds"
-    N_CELLS_MORETHAN <- 0
-    on_what <- 'MetaNiche'
-    by_what <- 'pCR_status'
-    patient_str <- "sample"; a <- 'pCR'; b <- 'RD'
 }
 
 if (T) {
@@ -85,74 +68,8 @@ if (T) {
         "tnbc" = "#ffb703"
     )
 }
-# f_in <- '/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas_with_diploid_epi/sr3_metadata.df.rds'
-# f_in <- '/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas//sr3_metadata.df.rds'
-#------ TME ------
-# f_in <- "/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas/objects_split_into_celltype/Mye/sr3_metadata.df.rds"
-# f_in <- '/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas/objects_split_into_celltype/T/sr3_metadata.df.rds'
-# f_in <- '/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas/objects_split_into_celltype/B/sr3_metadata.df.rds'
 
-# f_in <- '/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas/objects_split_into_celltype/Fibro/sr3_metadata.df.rds'
-# f_in <- '/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas/objects_split_into_celltype/Endo/sr3_metadata.df.rds'
-# f_in <- '/volumes/USR1/yyan/project/tnbc_pre_atlas/rds_rna-integrate/pat102/atlas/objects_split_into_celltype/Peri/sr3_metadata.df.rds'
-
-
-#------ Immune cells ------
-
-
-df_cellmeta <- read_rds(f_in)
-
-if ("Seurat" %in% class(df_cellmeta)) {
-    df_cellmeta <- df_cellmeta@meta.data
-}
-nrow(df_cellmeta)
-
-#------ atlas ------
-if (F) {
-    on_what <- "celltype"
-    by_what <- "pCR_status"
-    patient_str <- "patient"
-    a <- "pCR"
-    b <- "RD"
-}
-#------ TME of scRNA-seq ------
-if (F) {
-    on_what <- "ecotrait_feature"
-    on_what <- "cell_state_paper" # 20250402
-    by_what <- "pCR_status"
-    patient_str <- "patient"
-    a <- "pCR"
-    b <- "RD"
-}
-
-#------ TME of Xenium ------
-if (F) {
-    on_what <- "cell_state_paper" # 20250402
-    # on_what <- "celltype"
-    by_what <- "pCR_status"
-    patient_str <- "lab_id"
-    a <- "pCR"
-    b <- "RD"
-}
-
-#------ TME normal vs tnbc ------
-if (F) {
-    on_what <- "ecotrait_feature"
-    by_what <- "study"
-    patient_str <- "sample_id"
-    a <- "normal"
-    b <- "tnbc"
-}
-
-
-
-#-------------------------- START --------------------------
-# table(df_cellmeta$pCR_status)
-# tmp <- table(df_cellmeta$patient, df_cellmeta$pCR_status)
-# tmp <- tmp > 0
-# colSums(tmp) # 45+37=82
-# Excluded      pCR       RD
-#       19       45       37
+#----------- START -----------
 try(print(table(df_cellmeta[[on_what]], useNA = "always")))
 print(class(df_cellmeta[[on_what]]))
 
@@ -205,17 +122,6 @@ df[[by_what]] <- dict_pat2by[df[[patient_str]]]
 str(unique(df[[patient_str]]))
 # view(df)
 tail(df)
-#     celltype patient   n     N
-# 558    Tumor  ARTC94 536  7987
-# 559    Tumor  ARTC95 410  5795
-# 560    Tumor  ARTC96  36  2459
-# 561    Tumor  ARTC97 161  6516
-# 562    Tumor  ARTC98  67 10302
-# 563    Tumor  ARTC99 197  2320
-# table(df_cellmeta$patient)[c('ARTC01', 'ARTC09')]
-# table(df_cellmeta$patient, df_cellmeta$celltype)
-# table(df_cellmeta$patient, df_cellmeta$pCR_status)
-
 
 ## remove patients with few cells
 print(sum(patient_N <= 100))
@@ -262,20 +168,6 @@ if (on_what == "cell_state_paper") {
         as.character(df[[on_what]]),
         levels = on_what_lvs
     )
-}
-if (on_what == "ecotrait_feature") {
-    df[[on_what]] <- as.factor(df[[on_what]])
-
-    if (basename(dirname(f_in)) == "T" & on_what == "ecotrait_feature") {
-        df[[on_what]] <- factor(
-            as.character(df[[on_what]]),
-            levels = c(
-                "CD4_naive_ccr7", "CD4_Th_cxcr4", "CD4_treg", "CD4_exh_cxcl13", "CD4_ifn",
-                "CD8_exh_cxcl13", "CD8_ifn", "CD8_Tm_il7r", "CD8_gzmk", "CD8_nklike_xcl1",
-                "nkt_temra", "NK_cd16high", "NK_cd16low", "t_prol"
-            )
-        )
-    }
 }
 if (on_what == "MetaNiche") {
     df[[on_what]] <- factor(
@@ -586,9 +478,7 @@ ggsave(file.path(dir_res, "quasirandom.test.compact.pdf"), p,
 
 #------ Check other test results ------
 cli_h2("Check other test results")
-# for (difftest_method in c("wilcoxon", "dunn", "ttest", "kruskal")) {
-# for (difftest_method in c("anovatest")) {
-for (difftest_method in c("wilcoxon")) {
+for (difftest_method in c("wilcoxon", "dunn", "ttest", "kruskal")) {
     test_use <- switch(difftest_method,
         wilcoxon = wilcox_test,
         dunn = dunn_test,
@@ -906,130 +796,6 @@ for (variation_method in c("yy", "jeong", "yy_robust", "jeong_robust")) {
 df$on_what <- NULL
 df$by_what <- NULL
 
-#------ Permutation test ------
-if (F) {
-    adhoc_permutation_test <- function(group1, group2, num_permutations = 10000) {
-        # Compute observed difference in means
-        observed_stat <- mean(group1) - mean(group2)
-
-        # Combine both groups
-        combined <- c(group1, group2)
-        n1 <- length(group1)
-
-        # Perform permutations
-        permuted_stats <- numeric(num_permutations)
-
-        for (i in 1:num_permutations) {
-            shuffled <- sample(combined) # Shuffle data
-            permuted_stats[i] <- mean(shuffled[1:n1]) - mean(shuffled[(n1 + 1):length(combined)])
-        }
-
-        # Compute p-value (two-tailed test)
-        p_value <- mean(abs(permuted_stats) >= abs(observed_stat))
-
-        # Return results
-        list(Observed_Statistic = observed_stat, pval = p_value, permuted_stats = permuted_stats)
-    }
-
-    mm_viz <- unique(df[[on_what]])
-    df$on_what <- df[[on_what]]
-    df$by_what <- df[[by_what]]
-    res_perm <- lapply(mm_viz, function(mm) {
-        message(mm)
-        ref_v <- df %>%
-            dplyr::filter(on_what == mm) %>%
-            dplyr::filter(by_what == "pCR") %>%
-            dplyr::select(frac) %>%
-            deframe()
-        alt_v <- df %>%
-            dplyr::filter(on_what == mm) %>%
-            dplyr::filter(by_what == "RD") %>%
-            dplyr::select(frac) %>%
-            deframe()
-
-        adhoc_permutation_test(
-            group1 = ref_v,
-            group2 = alt_v,
-            num_permutations = 100000
-        )
-    })
-    names(res_perm) <- mm_viz
-    ## density plot
-    pdf(file.path(dir_res, sprintf("density.permutation_test.by_%s.pdf", by_what)),
-        width = 6, height = 4, onefile = T, useDingbats = F
-    )
-    for (mm in mm_viz) {
-        o <- res_perm[[mm]]
-        v <- o$permuted_stats
-        tmp <- data.frame(
-            value = v
-        )
-        tmp_p <- ggplot(tmp, aes(x = value)) +
-            geom_density(fill = "blue", alpha = 0.5) +
-            geom_vline(xintercept = o$Observed_Statistic, color = "red") +
-            labs(
-                title = mm,
-                subtitle = sprintf("Observed Statistic: %.4f; p-value: %.4f", o$Observed_Statistic, o$pval)
-            )
-        print(tmp_p)
-    }
-    dev.off()
-
-    df_stats_perm <- sapply(res_perm, function(x) {
-        c(
-            pval = x$pval,
-            Observed_Statistic = x$Observed_Statistic
-        )
-    }) %>%
-        t() %>%
-        as.data.frame() %>%
-        rownames_to_column(on_what) %>%
-        as_tibble()
-    df_stats_perm$qval <- p.adjust(df_stats_perm$pval, method = "fdr") # FDR adjustment
-    df_stats_perm$qval_star <- cut(
-        df_stats_perm$qval,
-        right = FALSE,
-        breaks = c(0, 0.0001, 0.001, 0.01, 0.05, 1),
-        labels = c("****", "***", "**", "*", "")
-    )
-    write_csv(df_stats_perm, file.path(dir_res, sprintf("report.permutation_test.by_%s.csv", by_what)))
-    write_rds(df_stats_perm, file.path(dir_res, sprintf("report.permutation_test.by_%s.rds", by_what)))
-}
-
-#------ LogReg test ------
-if (F) {
-    ## DEPRECATED
-    df_use <- df %>%
-        filter(pCR_status %in% c(a, b)) %>%
-        dplyr::select(frac, patient_str, by_what, on_what) %>%
-        dplyr::filter(frac != 0)
-    # dplyr::mutate(frac = ifelse(frac == 0, min(df_use$frac[df_use$frac!=0])/10, frac)) # avoid logit singularity
-
-    head(df_use)
-    df_use <- pivot_wider(
-        df_use,
-        names_from = on_what,
-        values_from = "frac", values_fill = 0.0001
-    )
-    colnames(df_use) <- make.names(colnames(df_use))
-    formula_str <- paste0(by_what, " ~ ", paste(setdiff(colnames(df_use), c(patient_str, by_what)), collapse = " + "))
-    logit_model <- glm(as.formula(formula_str), data = df_use, family = binomial)
-
-    mulv_model_res <- as.data.frame(summary(logit_model)$coef)
-    mulv_model_res$OR <- exp(coef(logit_model))
-    mulv_model_res <- cbind(mulv_model_res, exp(confint(logit_model)))
-
-    mulv_model_res <- rownames_to_column(mulv_model_res, "variate")
-    colnames(mulv_model_res) <- c(
-        "variate", "coef", "std_error_coef", "z", "pval",
-        "OR", "lowerCI", "upperCI"
-    )
-    mulv_model_res$qval <- p.adjust(mulv_model_res$pval, method = "fdr") # FDR adjustment
-    mulv_model_res$pval_star <- cut(mulv_model_res$pval, right = FALSE, breaks = c(0, 0.0001, 0.001, 0.01, 0.05, 1), labels = c("****", "***", "**", "*", ""))
-    mulv_model_res$qval_star <- cut(mulv_model_res$qval, right = FALSE, breaks = c(0, 0.0001, 0.001, 0.01, 0.05, 1), labels = c("****", "***", "**", "*", ""))
-    mulv_model_res
-    ## almost same OR???
-}
 #------ export ------
 write_rds(manual_test_res, file.path(dir_res, "manual_test_res.wilcoxon.rds"))
 write_csv(manual_test_res, file.path(dir_res, "manual_test_res.wilcoxon.csv"))
