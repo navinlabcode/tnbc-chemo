@@ -19,14 +19,16 @@ We uses the standardized pipeline `std_cell_fraction_test.A_vs_B.R` to compare c
 std_cell_fraction_test.A_vs_B.R PATH_TO_DATA_FRAME N_CELLS_AT_LEAST ON_WHAT BY_WHAT PATIENT_IND A B
 ```
 
-Parameter | Meaning
-PATH_TO_DATA_FRAME | data frame of single cells
-N_CELLS_AT_LEAST | Exclude the sample if it has less than `N_CELLS_AT_LEAST` cells. 
-ON_WHAT | Cell label. It could be cell type, or cell state. 
-BY_WHAT | Conditions of comparison. It could be 'therapy response' (pCR vs RD), or 'TIL level group' (low vs high). 
-PATIENT_IND | Column name to specify patients. Default: 'patient'
-A | Condition A. e.g., 'pCR' . 
-B | Condition B. e.g., 'non-pCR'. 
+| Parameter          | Meaning                                                                                                   |
+| ------------------ | --------------------------------------------------------------------------------------------------------- |
+| PATH_TO_DATA_FRAME | data frame of single cells                                                                                |
+| N_CELLS_AT_LEAST   | Exclude the sample if it has less than `N_CELLS_AT_LEAST` cells.                                          |
+| ON_WHAT            | Cell label. It could be cell type, or cell state.                                                         |
+| BY_WHAT            | Conditions of comparison. It could be 'therapy response' (pCR vs RD), or 'TIL level group' (low vs high). |
+| PATIENT_IND        | Column name to specify patients. Default: 'patient'                                                       |
+| A                  | Condition A. e.g., 'pCR' .                                                                                |
+| B                  | Condition B. e.g., 'non-pCR'.                                                                             |
+
 
 
 **Output**
@@ -37,7 +39,7 @@ B | Condition B. e.g., 'non-pCR'.
 
 - Boxplot
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/USE.boxplot.test.compact.pdf.Mye.100.pdf.png?raw=true" width="400">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/USE.boxplot.test.compact.pdf.Mye.100.pdf.png?raw=true" width="1000">
 
 - Lolipop plot
 
@@ -45,9 +47,9 @@ B | Condition B. e.g., 'non-pCR'.
 
 - Barplot
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/barplot.summaried.frac.pdf.pngraw=true" width="400">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/barplot.summaried.frac.pdf.png?raw=true" width="600">
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/barplot.frac.pdf.png?raw=true" width="400">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/barplot.frac.pdf.png?raw=true" width="600">
 
 ---
 
