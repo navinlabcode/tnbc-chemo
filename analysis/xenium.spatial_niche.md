@@ -35,11 +35,8 @@ Heatmap showing the relative cell states composition of spatial niches.
 
 More examples of niches on samples
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART10.pdf.png?raw=true" width="300"> 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART23.pdf.png?raw=true" width="300">
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART236.pdf.png?raw=true" width="300">
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART272.pdf.png?raw=true" width="300">
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART304.pdf.png?raw=true" width="300">
+| <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART10.pdf.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART23.pdf.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART236.pdf.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART272.pdf.png?raw=true" width="200"> | <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/spatial_niche/spatial_dimplot_MetaNiche_10_ART304.pdf.png?raw=true" width="200"> |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
 
