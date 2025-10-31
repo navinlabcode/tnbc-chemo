@@ -74,8 +74,8 @@ Analysis are accompanied with detailed instructions. See below.
 
 | Analysis                                      | Related figures |
 | --------------------------------------------- | --------------- |
-| Training the gene-based classifier [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ML_13g.md) | Fig. 6d-g       |
-| Testing the gene-based classifier using other cohorts [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ML_13g.md)  | Fig. 6d-g       |
+| Training the gene-based classifier [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ML_13g.md#building-the-13-gene-classifier) | Fig. 6d-g       |
+| Testing the gene-based classifier using other cohorts [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/ML_13g.md#testing-the-13-gene-classifier)  | Fig. 6d-g       |
 
 
 
