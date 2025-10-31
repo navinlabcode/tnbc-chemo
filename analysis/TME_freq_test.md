@@ -47,7 +47,7 @@ std_cell_fraction_test.A_vs_B.R PATH_TO_DATA_FRAME N_CELLS_AT_LEAST ON_WHAT BY_W
 
 - Barplot
 
-<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/barplot.summaried.frac.pdf.png?raw=true" width="600">
+<img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/barplot.summaried.frac.pdf.png?raw=true" width="300">
 
 <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/tme_cellstates/barplot.frac.pdf.png?raw=true" width="600">
 

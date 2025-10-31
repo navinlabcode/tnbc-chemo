@@ -39,7 +39,7 @@ Analysis are accompanied with detailed instructions. See below.
 | Analysis                                                            | Related figures |
 | ------------------------------------------------------------------- | --------------- |
 | Identifying cell states of immune and stromal cell types [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/TME.md) | Fig. 4          |
-| Determining and comparing cell percentages of cell states [(link)]()          | Fig. 4          |
+| Determining and comparing cell percentages of cell states [(link)](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/TME_freq_test.md)          | Fig. 4          |
 
 
 
