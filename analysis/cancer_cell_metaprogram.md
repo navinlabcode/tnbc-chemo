@@ -144,6 +144,7 @@ Rscript analysis/scripts/metamodule_cell_frequency.R
 
 Boxplots are also generated for the other metaprograms. M5-IFN is simply an example.
 
+Multiple-test p-value correction was additionally performed using the standardized pipeline [std_cell_fraction_test.A_vs_B.R](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/sc_pp/std_cell_fraction_test.A_vs_B.R). 
 
 ---
 
