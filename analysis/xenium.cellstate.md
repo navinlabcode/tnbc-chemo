@@ -39,6 +39,8 @@ Last, because some cell states may be rare, we take advantage of our large cohor
 
 **Visualization** 
 
+For example, the dotplot showing the top genes of the endothelial cell states. 
+
 <img src="https://github.com/navinlabcode/tnbc-chemo/blob/main/website_images/analysis/xenium/Endo.dotplot2.DEGs.cell_state_paper.pdf.png?raw=true" width="800">
 
 
