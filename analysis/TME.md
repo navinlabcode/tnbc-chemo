@@ -2,12 +2,12 @@
 
 # Identifying cell states of the TME cell types
 
-This vigenette shows how we perform clustering and annotations on the TME cell types to identify the cell states. For discoverry, we primarily use 2 approaches: 
+This vignette shows how we perform clustering and annotations on the TME cell types to identify the cell states. For discovery, we primarily use 2 approaches: 
 
-- Levaraging the scRNA-seq data of the Human Normal Breast Atlas (HBCA, [PMID: 37380767](https://pubmed.ncbi.nlm.nih.gov/37380767/)) as the reference. 
-- Unbiased clustering of our own data: using the clustree package and performing DEGs to investigate if under-/over- clustering. If the resulting subclusters share too many DEGs or cannot detect DEGs, it indicates over-clustering. 
+- Leveraging the scRNA-seq data of the Human Normal Breast Atlas (HBCA, [PMID: 37380767](https://pubmed.ncbi.nlm.nih.gov/37380767/)) as the reference. 
+- Unbiased clustering of our own data: using the [clustree](https://github.com/lazappi/clustree) package and performing DEGs to investigate if under-/over- clustering. If the resulting subclusters share too many DEGs or cannot detect DEGs, it indicates over-clustering. 
 
-For validation, we use the Xenium as described in another vigenette [here](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/xenium.cellstate.md). 
+For validation, we use the Xenium as described in another vignette [here](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/xenium.cellstate.md). 
 
 **Related figures**:
 
@@ -38,10 +38,10 @@ prepare_sr.R FILE_PATH_TO_SEURAT DIR_RESULT CCC_PLAN N_PC N_PC_NN ASSAY
 integrate_seurat.R FILE_PATH_TO_SEURAT N_PC_NN
 ```
 
-| Parameer            | Meaning                                                                                                  |
+| Parameter            | Meaning                                                                                                  |
 | ------------------- | -------------------------------------------------------------------------------------------------------- |
-| FILE_PATH_TO_SEURAT | file path to the merged Seurat object. The `patient` in the meta.data is used to specificy the patients. |
-| N_PC_NN             | Number of PCA compoments to run PCA and to run `FindNeighbors` and `RunUMAP`.                            |
+| FILE_PATH_TO_SEURAT | file path to the merged Seurat object. The `patient` in the meta.data is used to specify the patients. |
+| N_PC_NN             | Number of PCA components to run PCA and to run `FindNeighbors` and `RunUMAP`.                            |
 
 
 **Output**
