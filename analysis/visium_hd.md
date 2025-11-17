@@ -26,6 +26,13 @@ A cell is finalized as a 'cancer cell', if it is identified as a 'Tumor' cell in
 - <kbd>analysis/scripts/visiumHD/visium_HD.finalize_cancer_cells.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visium_HD.finalize_cancer_cells.R)). Finalizing the identities of cell types especially the cancer cells. 
 - <kbd>analysis/scripts/visiumHD/visiumHD.addmodulescore_ForCancerCells.alt.R</kbd> ([link](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/visiumHD/visiumHD.addmodulescore_ForCancerCells.alt.R)). Calculating module scores of any gene signatures on the cancer cells only. 
 
+**Libaray data objects**
+
+Reference data object of running RCTD ([link](https://github.com/navinlabcode/tnbc-chemo/tree/main/other/SCTD))
+
+- The Normal breast tissue reference data. <kbd>Navin_HBCA_scRNA_10k_Ref_Ready.rds</kbd>.
+- The TNBC tissue reference data <kbd>RCTD_object.TNBC_celltypes.rds</kbd>. 
+
 **Output**
 
 - An analysis-ready Seurat object of Visium HD data, which contains the cell types identities, especially the cancer cells. 
