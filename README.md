@@ -12,9 +12,6 @@ This repository includes the codes and analysis instructions for the manuscript:
 | [other data](https://github.com/navinlabcode/tnbc-chemo/tree/main/other)           | Public data we used in this study                    | public     |
 
 
+# Browsing single-cell data at CELLxGENE
 
-# Browsing single-cell data
-
-We provided 2 ways to quickly browse our single-cell data and perform data reanalysis or visualization: 
-1. Cloud platform of CELLxGENE (in preparation).
-2. Local computer using Python language: [overview_CellxGene.ipynb](https://github.com/navinlabcode/tnbc-chemo/blob/main/analysis/scripts/scanpy/overview_CellxGene.ipynb)
+https://cellxgene.cziscience.com/e/6f9de485-58cd-4342-bfc4-b3d3dd223aa8.cxg/
