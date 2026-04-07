@@ -1,6 +1,9 @@
 # Triple-negative breast cancer and chemotherapy response
 
-This repository includes the codes and analysis instructions for the manuscript: 'Decoding the Archetypes and Ecotypes of Triple-Negative Breast Cancer in Response to Chemotherapy'.
+This repository includes the codes and analysis instructions for the manuscript: 'Ecotypes of Triple-Negative Breast Cancer in Response to Chemotherapy'.
+
+<img src="https://github.com/user-attachments/assets/d3a29c45-6e14-4b1c-a793-2278c51be472" width="400">
+
 
 # Contents
 
