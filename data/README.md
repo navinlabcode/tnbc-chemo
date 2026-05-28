@@ -1,6 +1,6 @@
 # Single-cell RNA-seq Data
 
-Browse and download the data from: https://cellxgene.cziscience.com/e/6f9de485-58cd-4342-bfc4-b3d3dd223aa8.cxg/
+Browse and download the data from the CellxGene portal: https://cellxgene.cziscience.com/e/6f9de485-58cd-4342-bfc4-b3d3dd223aa8.cxg/
 
 # Spatial Transcriptomics Data
 
