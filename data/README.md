@@ -40,5 +40,9 @@ visiumST
 
 # Ecotypes
 
-This dictionary `cell_identity_to_ecotype.csv` saves the mapping between cell identities and ecotypes. Related to Fig. 5a. 
+This dictionary `ecotype/cell_identity_to_ecotype.csv` saves the mapping between cell identities and ecotypes. Related to Fig. 5a. 
+
+# Spatial Niches
+
+The content matrix of spatial niches is provided at `spatial_niches/niche_content.csv`.  Related to Fig. 5d. 
 
