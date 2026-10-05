@@ -38,3 +38,7 @@ visiumST
 └── visiumST_std_output    => The raw output of the standard Visium bioinformatics pipeline.
 ```
 
+# Ecotypes
+
+This dictionary `cell_identity_to_ecotype.csv` saves the mapping between cell identities and ecotypes. Related to Fig. 5a. 
+
