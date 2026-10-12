@@ -42,8 +42,96 @@ suppressPackageStartupMessages({
   library(GenomicRanges); library(GenomeInfoDb)
   library(matrixStats)
   library(ComplexHeatmap)
+  library(irlba); library(uwot)
+  library(Rtsne)
+  library(Rphenograph)
+  library(leidenbase)
+  library(igraph)
   # ht_opt$fast_hclust <-  TRUE
 })
+
+if (TRUE) {
+  #--------------------------
+  # Dimension reduction
+  #--------------------------
+  addPCA <- function(icna, npcs=50, features=NULL, slot=c('CNA', 'logCNA'), seed=1026){
+    slot <- match.arg(slot)
+    if (!all(is.null(features))){
+      dt <- assays(icna[features, ])[[slot]] %>% as.data.frame()
+    } else {
+      dt <- assays(icna)[[slot]] %>% as.data.frame()
+    }
+    set.seed(seed)
+    pca_obj <- prcomp_irlba( t(dt), n=npcs, retx=T, center=T, scale. = T)
+    reducedDims(icna)$PCA <-  pca_obj$x
+    return(icna)
+  }
+  addTSNE <- function(icna, use_pcs=1:50, seed=26, ...){
+    set.seed(seed)
+    pca_mat <- reducedDims(icna)$PCA
+    tsne_obj <- try(Rtsne::Rtsne(pca_mat[, use_pcs, drop=F], pca=FALSE, ...))
+    if (inherits(tsne_obj, 'try-error')){
+      warning('TSNE failed.')
+    } else {
+      reducedDims(icna)$tSNE <- tsne_obj$Y
+      colnames(reducedDims(icna)$tSNE) <- c('tSNE1', 'tSNE2')
+    }
+    return(icna)
+  }
+  addUMAP <- function(icna, use_pcs=1:50, metric = 'cosine', seed=26, ...){
+    pca_mat <- reducedDims(icna)$PCA[, use_pcs, drop=F]
+    set.seed(seed)
+    umap_obj <- try( uwot::umap( pca_mat, metric=metric, ...) ) # 1observation/row
+    if (inherits(umap_obj, 'try-error')) {
+      warning('UMAP failed.')
+    } else {
+      colnames(umap_obj) <- c('UMAP1', 'UMAP2')
+      rownames(umap_obj) <- colnames(icna)
+      reducedDims(icna)$UMAP <- umap_obj
+    }
+    return(icna)
+  }
+
+  run_phenograph <- function(icna, k=30, reduction='PCA', 
+                             use_dims=1:50, seed=26) {
+    dr <- reducedDims(icna)[[reduction]][, use_dims, drop=F]
+    set.seed(seed)
+    message(sprintf('Building Rphenograph using k=%s', k))
+    graph_obj <- Rphenograph::Rphenograph(dr, k=k)
+    while( sum(igraph::sizes(graph_obj[[2]])) != ncol(icna) ) {
+      k <- k + 5
+      graph_obj <- Rphenograph::Rphenograph(dr, k=k)
+    }
+    # run_graph_name <- sprintf('Phenograph_k%s', k)
+    run_graph_name <- 'Phenograph'
+    metadata(icna)[[run_graph_name]] <- graph_obj[[1]]
+
+    run_cluster_name <- sprintf('Cluster_louvain_k_%s', k)
+    message(sprintf('Saving clustering result at %s', run_cluster_name))
+    res <- as.numeric( igraph::membership(graph_obj[[2]]) )
+    res <- factor(res, levels=gtools::mixedsort(unique(res)))
+    colData(icna)[[run_cluster_name]] <- res
+    return(icna)
+  }
+
+  run_leiden <- function(icna, resolution=1, seed=26){
+    graph_obj <- metadata(icna)$Phenograph
+    message(sprintf('Leiden clustering using resolution=%s', resolution))
+    run_cluster_name <- sprintf('Cluster_leiden_res_%s', resolution)
+    message(sprintf('Saving clustering result at %s', run_cluster_name))
+    res_obj <- leidenbase::leiden_find_partition(
+      graph_obj,
+      partition_type = 'RBConfigurationVertexPartition',
+      resolution_parameter = resolution,
+      seed=seed)
+    res <- res_obj$membership
+    res <- factor(res, levels=gtools::mixedsort(unique(res)))
+    message(sprintf('Number of clusters: %d', length(levels(res))))
+    colData(icna)[[run_cluster_name]] <- res
+    icna
+  }
+
+}
 
 # TEST --------
 # ## Inputs
