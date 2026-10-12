@@ -131,6 +131,132 @@ if (TRUE) {
     icna
   }
 
+  drplot <- function(
+    icna, reduction, group.by, dims=c(1, 2), 
+    add_label=T, label_size=5, do_raster=T, pt.size=0.1){
+    yy_scatter_theme <- theme_pubr(base_size = 12, legend = 'right') %+replace%
+      theme(axis.text=element_text(size=rel(.2)), axis.title=element_text(size=rel(.3)), axis.ticks=element_line(size = rel(.3)), panel.border = element_rect(fill = NA, size=rel(.5)), axis.line = element_blank())
+    
+    dr <- reducedDims(icna)[[reduction]][, dims, drop=F]
+    dr <- as.data.frame(dr)
+    axis_labs <- paste(reduction, dims, sep='_')
+    colnames(dr) <- axis_labs
+    dr$GRP <- '_'
+    dr$cellname <- make.names(colnames(icna))
+    if (!missing(group.by)) {dr$GRP <- colData(icna)[[group.by]]}
+    
+    p <- ggplot(dr, aes_string(x=axis_labs[1], y=axis_labs[2]))
+    geom_point_func <- ggplot2::geom_point;  if (do_raster) {geom_point_func <- ggrastr::geom_point_rast}
+    if (missing(group.by)) {
+      p <- p + geom_point_func(size=pt.size, pch=16)
+    } else {
+      p <- p + geom_point_func(aes_string(color='GRP'), size=pt.size, pch=16) +
+        labs(color='', title=group.by)
+      ## group label
+      if (add_label) {
+        dr_text <- dplyr::group_by(dr, GRP) %>%
+          summarise_at(axis_labs, median, na.rm=T)
+        p <- p + ggrepel::geom_text_repel(
+          aes_string(x=axis_labs[1], y=axis_labs[2], label='GRP'), 
+          data = dr_text, size=label_size)
+      }
+    }
+    return(p + coord_equal() + yy_scatter_theme + 
+             guides(colour = guide_legend(override.aes = list(size=3))))
+  }
+
+  get_complexheatmap_rownames <- function(obj){
+    rownames(obj@matrix)
+  }
+
+  plot_heatmap_sc_manual <- function(
+    icna, anno_rows_category, cell_group_by,
+    slot='logCNA', clip=c(-2, 2), row_anno_color_list=NULL, ...){
+    stopifnot(cell_group_by %in% colnames(colData(icna)))
+    ## 1/: chromasome bar
+    chrname_viz <- seqnames(rowRanges(icna)) %>% 
+      as.character() %>% gsub(pattern = 'chr', replacement = '')
+    chrname_viz_levels <- gtools::mixedsort(unique(chrname_viz))
+    chrname_viz <- factor(chrname_viz, levels = chrname_viz_levels)
+    chrname_viz_color <- rep('black', length(chrname_viz_levels))
+    chrname_viz_color[seq(1, length(chrname_viz_levels), 2)] <- 'snow3'
+    names(chrname_viz_color) <- chrname_viz_levels
+    heatmap_chr_bar <- HeatmapAnnotation(
+      chrom=as.character(chrname_viz),
+      show_legend = F,
+      col = list(chrom = chrname_viz_color),
+      na_col = 'red',
+      show_annotation_name=F
+    )
+    
+    ## 2/: visalization mat
+    mat <- t( assays(icna)[[slot]] ) # log2(CNA+1e-3) cells x windows
+    
+    ## 3/: row annotation
+    hm_row_anno <- NULL
+    if (!missing(anno_rows_category)){
+      df_row_anno <- colData(icna)[, anno_rows_category, drop=F] %>% 
+        as.data.frame()
+      df_row_anno <- df_row_anno
+      if (is.null(row_anno_color_list)){
+        hm_row_anno <- HeatmapAnnotation(
+          df=df_row_anno, na_col = 'grey', which = 'row',
+          annotation_legend_param = list(
+            nrow=1,
+            color_bar = "discrete",
+            legend_direction = "horizontal"),
+          show_annotation_name=F)
+      } else {
+        hm_row_anno <- HeatmapAnnotation(
+          df=df_row_anno, na_col = 'grey', which = 'row',
+          col = row_anno_color_list, 
+          annotation_legend_param = list(
+            nrow=1,
+            color_bar = "discrete",
+            legend_direction = "horizontal"),
+          show_annotation_name=F)
+      }
+    }
+    ## 4/: row split
+    hm_row_split <- as.character(colData(icna)[, cell_group_by])
+    ## 5/: heatmap
+    ht_cluster_fh <-  function(x) fastcluster::hclust(
+      parallelDist::parDist(x, method = 'manhattan', threads=42), 
+      method = 'ward.D2')
+    ComplexHeatmap::Heatmap(
+      matrix = mat,
+      name = 'log2(Ratio)',
+      
+      border = TRUE,
+      
+      cluster_columns = F, 
+      show_column_names = F, 
+      column_split = chrname_viz,
+      column_gap = unit(0, 'mm'),
+      
+      row_split = hm_row_split,
+      cluster_rows = ht_cluster_fh,
+      cluster_row_slices = TRUE,
+      clustering_method_rows = 'ward.D2',
+      clustering_distance_rows = 'manhattan',
+      show_row_names = F,
+      row_gap = unit(0, 'mm'),
+      
+      # heatmap_legend_param = list(color_bar = "discrete"),
+      col=colorRamp2(c(clip[1], 0, clip[2]),
+                     c('blue', 'white', 'red')),
+      
+      na_col = 'purple',
+      # height = unit(.3, 'inch') * nrow(mat),
+      # width=unit(0.001, 'inch') * ncol(mat),
+      top_annotation = heatmap_chr_bar,
+      left_annotation = hm_row_anno,
+      heatmap_legend_param = list(direction = "horizontal"),
+      use_raster = T, 
+      ...
+    )
+  }
+
 }
 
 # TEST --------
