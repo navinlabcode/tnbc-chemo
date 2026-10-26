@@ -17,10 +17,6 @@ Please feel free to ask quesitons regarding data processing and data analysis us
 | [other data](https://github.com/navinlabcode/tnbc-chemo/tree/main/other)           | Public data we used in this study                    | public     |
 
 
-# Browsing single-cell data at CELLxGENE
-
-https://cellxgene.cziscience.com/e/6f9de485-58cd-4342-bfc4-b3d3dd223aa8.cxg/
-
 ---
 
 $${\color{grey}\text{Welcome visitors}}$$
