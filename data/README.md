@@ -6,6 +6,8 @@ Browse and download the data from the CellxGene portal: https://cellxgene.czisci
 
 We are more than happy to share the spatial transcriptomics data. However, we have not yet identified a suitable platform for easily hosting and sharing these data, particularly the high-resolution H&E images. In contrast, scRNA-seq data have several well-established repositories, such as CELLxGENE and GEO. Therefore, we kindly ask any interested researchers to contact us by email, and we will provide download links upon request. 
 
+:star: Please use `.edu` or `.org` email addresses to contact us. Please kindly provide your name, title, affiliation, and provide supervisor/mentor name, if applicable. 
+
 Our spatial transcriptomics datasets are organized in the following folder structure. As we are more than happy to share the processed results as much as we can, new contents will be probably added.
 
 ## Xenium data
